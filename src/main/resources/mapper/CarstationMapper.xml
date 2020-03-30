@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aokai.parking.dao.CarstationMapper">
+  <resultMap id="BaseResultMap" type="com.aokai.parking.po.Carstation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="c_id" jdbcType="INTEGER" property="cId" />
+    <result column="c_name" jdbcType="VARCHAR" property="cName" />
+    <result column="c_location" jdbcType="VARCHAR" property="cLocation" />
+    <result column="c_description" jdbcType="VARCHAR" property="cDescription" />
+    <result column="c_total" jdbcType="INTEGER" property="cTotal" />
+    <result column="c_code" jdbcType="VARCHAR" property="cCode" />
+    <result column="c_price" jdbcType="DOUBLE" property="cPrice" />
+    <result column="c_pricetime" jdbcType="DOUBLE" property="cPricetime" />
+  </resultMap>
+</mapper>
