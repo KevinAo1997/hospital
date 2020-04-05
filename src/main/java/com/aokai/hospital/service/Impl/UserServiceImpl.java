@@ -1,7 +1,7 @@
-package com.aokai.parking.service.Impl;
+package com.aokai.hospital.service.Impl;
 
-import com.aokai.parking.dao.UserMapper;
-import com.aokai.parking.service.UserService;
+import com.aokai.hospital.dao.UserMapper;
+import com.aokai.hospital.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
