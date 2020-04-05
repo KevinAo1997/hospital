@@ -6,13 +6,18 @@ import com.aokai.hospital.dao.PatientMapper;
 import com.aokai.hospital.enums.UserTypeEnum;
 import com.aokai.hospital.enums.UserTypeEnum.UserType;
 import com.aokai.hospital.model.dto.User;
+import com.aokai.hospital.model.qo.RegisterReq;
 import com.aokai.hospital.model.qo.UserReq;
 import com.aokai.hospital.po.Admin;
 import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.po.Patient;
 import com.aokai.hospital.service.UserService;
 import com.aokai.hospital.utils.MD5Util;
+import java.util.Collections;
+import java.util.List;
+import javax.swing.Painter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -72,5 +77,43 @@ public class UserServiceImpl implements UserService {
             user.setPassword(doctor.getPassword());
         }
         return user;
+    }
+
+    @Override
+    public Boolean checkUserName(RegisterReq registerReq) {
+        String account = registerReq.getAccount();
+        // 根据用户账号查询用户信息
+        List<Patient> patientList = patientMapper.checkUserName(account);
+        if (CollectionUtils.isEmpty(patientList)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public Boolean checkUserEmail(RegisterReq registerReq) {
+        String email = registerReq.getEmail();
+        // 根据用户邮箱查询用户信息
+        List<Patient> patientList = patientMapper.checkUserEmail(email);
+        if (CollectionUtils.isEmpty(patientList)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public Boolean insertPatient(RegisterReq registerReq) {
+        Patient patient = new Patient();
+        patient.setAccount(registerReq.getAccount());
+        patient.setPassword(MD5Util.string2MD5(registerReq.getPassword()));
+        patient.setEmail(registerReq.getEmail());
+        patient.setName(registerReq.getName());
+        patient.setIntegrity((byte) 100);
+        // 增加患者用户
+        Integer count = patientMapper.insert(patient);
+        if (count > 0) {
+            return true;
+        }
+        return false;
     }
 }

@@ -17,4 +17,13 @@
   <select id="checkPatient" resultType="com.aokai.hospital.po.Patient">
     select * from patient where account = #{username} and password = #{password}
   </select>
+
+  <select id="checkUserName" resultType="com.aokai.hospital.po.Patient">
+    select * from patient where account = #{account}
+  </select>
+
+
+  <select id="checkUserEmail" resultType="com.aokai.hospital.po.Patient">
+    select * from patient where email = #{email};
+  </select>
 </mapper>
