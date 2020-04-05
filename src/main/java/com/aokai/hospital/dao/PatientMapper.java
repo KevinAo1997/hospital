@@ -2,8 +2,10 @@ package com.aokai.hospital.dao;
 
 import com.aokai.hospital.po.Patient;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
+@Repository
 public interface PatientMapper extends Mapper<Patient> {
 
     /**

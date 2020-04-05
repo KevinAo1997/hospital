@@ -2,6 +2,7 @@ package com.aokai.hospital.model.dto;
 
 import java.io.Serializable;
 import lombok.Data;
+import lombok.Getter;
 import lombok.ToString;
 
 /**
@@ -12,6 +13,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
+@Getter
 public class User implements Serializable {
 
     private static final long serialVersionUID = -1627712534930187471L;
@@ -26,13 +28,6 @@ public class User implements Serializable {
      */
     private String password;
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public User() {
-    }
 }
 
 

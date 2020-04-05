@@ -13,6 +13,7 @@ import com.aokai.hospital.po.Patient;
 import com.aokai.hospital.service.UserService;
 import com.aokai.hospital.utils.MD5Util;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -25,15 +26,21 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class UserServiceImpl implements UserService {
 
+    @Autowired
     private AdminMapper adminMapper;
 
+    @Autowired
     private PatientMapper patientMapper;
 
+    @Autowired
     private DoctorMapper doctorMapper;
+
+    public UserServiceImpl() {
+    }
 
     @Override
     public User checkUser(UserReq userReq) {
-        User user = new User();
+        User user = null;
         UserTypeEnum.UserType userType = userReq.getUserType();
         String username = userReq.getUsername();
         String password = MD5Util.string2MD5(userReq.getPassword());
@@ -43,7 +50,7 @@ public class UserServiceImpl implements UserService {
         if (UserType.ADMIN.equals(userType)) {
             Admin admin = adminMapper.checkAdmin(username, password);
             if (admin == null) {
-                return user;
+                return null;
             }
             user.setUsername(admin.getName());
             user.setPassword(admin.getPassword());
@@ -51,7 +58,7 @@ public class UserServiceImpl implements UserService {
         } else if (UserType.PATIENT.equals(userType)) {
             Patient patient = patientMapper.checkPatient(username, password);
             if (patient == null) {
-                return user;
+                return null;
             }
             user.setUsername(patient.getAccount());
             user.setPassword(patient.getPassword());
@@ -59,7 +66,7 @@ public class UserServiceImpl implements UserService {
         } else {
             Doctor doctor = doctorMapper.checkDoctor(username, password);
             if (doctor == null) {
-                return user;
+                return null;
             }
             user.setUsername(doctor.getAccount());
             user.setPassword(doctor.getPassword());
