@@ -30,6 +30,10 @@ public class User {
 
     private Integer type;
 
+    public User(String username, String password) {
+
+    }
+
     /**
      * @return id
      */
