@@ -73,7 +73,7 @@
     <!-- 非 prod 环境下使用以下配置 -->
     <springProfile name="!prod">
         <!-- 记录器 name : 包名或类名， level : 要记录的日志的起始级别， additivity : 是否追加父类的 appender -->
-        <logger name="com.aokai.parking.dao" level="debug" additivity="false">
+        <logger name="com.aokai.hospital.dao" level="debug" additivity="false">
             <appender-ref ref="STDOUT"/>
             <appender-ref ref="ROLLING"/>
         </logger>

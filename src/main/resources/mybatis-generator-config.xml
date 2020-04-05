@@ -65,7 +65,7 @@
     </javaTypeResolver>
 
     <!-- 生成实体类地址 -->
-    <javaModelGenerator targetPackage="com.aokai.parking.po" targetProject="src/main/java">
+    <javaModelGenerator targetPackage="com.aokai.hospital.po" targetProject="src/main/java">
       <!-- 是否让 schema 作为包的后缀，默认为false -->
       <!--<property name="enableSubPackages" value="false"/>-->
       <!-- 是否针对string类型的字段在set方法中进行修剪，默认false -->
@@ -79,7 +79,7 @@
     </sqlMapGenerator>
 
     <!-- 生成 XxxMapper.java 接口-->
-    <javaClientGenerator targetPackage="com.aokai.parking.dao" targetProject="src/main/java" type="XMLMAPPER">
+    <javaClientGenerator targetPackage="com.aokai.hospital.dao" targetProject="src/main/java" type="XMLMAPPER">
       <!--<property name="enableSubPackages" value="false"/>-->
     </javaClientGenerator>
 

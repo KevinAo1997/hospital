@@ -1,4 +1,4 @@
-package com.aokai.parking.service;
+package com.aokai.hospital.service;
 
 /**
  * Description :   .
