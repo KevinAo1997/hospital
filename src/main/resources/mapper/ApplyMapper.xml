@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aokai.hospital.dao.ApplyMapper">
+  <resultMap id="BaseResultMap" type="com.aokai.hospital.po.Apply">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="aid" jdbcType="INTEGER" property="aid" />
+    <result column="did" jdbcType="INTEGER" property="did" />
+    <result column="dname" jdbcType="CHAR" property="dname" />
+    <result column="wid" jdbcType="INTEGER" property="wid" />
+    <result column="reason" jdbcType="CHAR" property="reason" />
+    <result column="applytime" jdbcType="TIMESTAMP" property="applytime" />
+    <result column="request" jdbcType="CHAR" property="request" />
+    <result column="state" jdbcType="CHAR" property="state" />
+  </resultMap>
+</mapper>

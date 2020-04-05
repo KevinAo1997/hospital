@@ -1,5 +1,8 @@
 package com.aokai.hospital.service;
 
+import com.aokai.hospital.model.dto.User;
+import com.aokai.hospital.model.qo.UserReq;
+
 /**
  * Description :   .
  *
@@ -8,5 +11,10 @@ package com.aokai.hospital.service;
  */
 public interface UserService {
 
-    Integer updateUserState(Integer state, Integer id);
+    /**
+     * 获取用户信息
+     * @param userReq
+     * @return
+     */
+    User checkUser(UserReq userReq);
 }

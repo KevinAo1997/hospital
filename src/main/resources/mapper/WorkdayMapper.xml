@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aokai.hospital.dao.WorkdayMapper">
+  <resultMap id="BaseResultMap" type="com.aokai.hospital.po.Workday">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="wid" jdbcType="INTEGER" property="wid" />
+    <result column="did" jdbcType="INTEGER" property="did" />
+    <result column="worktime" jdbcType="CHAR" property="worktime" />
+    <result column="ampm" jdbcType="CHAR" property="ampm" />
+    <result column="nsnum" jdbcType="INTEGER" property="nsnum" />
+    <result column="state" jdbcType="CHAR" property="state" />
+  </resultMap>
+</mapper>

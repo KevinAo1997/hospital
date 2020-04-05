@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aokai.hospital.dao.PatientMapper">
+  <resultMap id="BaseResultMap" type="com.aokai.hospital.po.Patient">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="account" jdbcType="CHAR" property="account" />
+    <result column="email" jdbcType="CHAR" property="email" />
+    <result column="password" jdbcType="CHAR" property="password" />
+    <result column="name" jdbcType="CHAR" property="name" />
+    <result column="integrity" jdbcType="TINYINT" property="integrity" />
+  </resultMap>
+
+
+  <select id="checkPatient" resultType="com.aokai.hospital.po.Patient">
+    select * from patient where account = #{username} and password = #{password}
+  </select>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aokai.hospital.dao.IntegrityMapper">
+  <resultMap id="BaseResultMap" type="com.aokai.hospital.po.Integrity">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="integrityid" jdbcType="INTEGER" property="integrityid" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="dname" jdbcType="CHAR" property="dname" />
+    <result column="office" jdbcType="CHAR" property="office" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="reason" jdbcType="CHAR" property="reason" />
+    <result column="score" jdbcType="TINYINT" property="score" />
+  </resultMap>
+</mapper>

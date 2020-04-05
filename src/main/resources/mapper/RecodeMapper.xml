@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aokai.hospital.dao.RecodeMapper">
+  <resultMap id="BaseResultMap" type="com.aokai.hospital.po.Recode">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="wid" jdbcType="INTEGER" property="wid" />
+    <result column="did" jdbcType="INTEGER" property="did" />
+    <result column="serialnumber" jdbcType="INTEGER" property="serialnumber" />
+    <result column="visitdate" jdbcType="DATE" property="visitdate" />
+    <result column="visitnoon" jdbcType="CHAR" property="visitnoon" />
+    <result column="visittime" jdbcType="TIME" property="visittime" />
+    <result column="ordertime" jdbcType="TIMESTAMP" property="ordertime" />
+    <result column="state" jdbcType="CHAR" property="state" />
+  </resultMap>
+</mapper>

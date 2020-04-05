@@ -353,3 +353,105 @@ java.lang.IllegalStateException: Optional int parameter 'id' is present but cann
 2020-04-05 20:10:26,468 INFO  13384 --- [http-nio-8081-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-04-05 20:10:26,468 INFO  13384 --- [http-nio-8081-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
 2020-04-05 20:10:26,480 INFO  13384 --- [http-nio-8081-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 11 ms
+2020-04-05 20:51:47,267 INFO  13384 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-05 21:34:29,522 INFO  13460 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 13460 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-05 21:34:29,528 INFO  13460 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-05 21:34:30,658 WARN  13460 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-05 21:34:31,372 INFO  13460 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8081 (http)
+2020-04-05 21:34:31,388 INFO  13460 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8081"]
+2020-04-05 21:34:31,389 INFO  13460 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-05 21:34:31,389 INFO  13460 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-05 21:34:31,548 INFO  13460 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-05 21:34:31,548 INFO  13460 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1898 ms
+2020-04-05 21:34:32,561 INFO  13460 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-05 21:34:32,858 INFO  13460 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-05 21:34:32,859 INFO  13460 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-05 21:34:32,860 INFO  13460 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-05 21:34:32,861 INFO  13460 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-05 21:34:33,017 INFO  13460 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8081"]
+2020-04-05 21:34:33,052 INFO  13460 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8081 (http) with context path ''
+2020-04-05 21:34:33,060 INFO  13460 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 4.501 seconds (JVM running for 7.916)
+2020-04-05 21:36:09,372 INFO  13460 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-05 21:36:16,735 INFO  17328 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 17328 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-05 21:36:16,751 INFO  17328 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-05 21:36:18,362 WARN  17328 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-05 21:36:18,921 INFO  17328 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8081 (http)
+2020-04-05 21:36:18,938 INFO  17328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8081"]
+2020-04-05 21:36:18,939 INFO  17328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-05 21:36:18,940 INFO  17328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-05 21:36:19,058 INFO  17328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-05 21:36:19,059 INFO  17328 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 2171 ms
+2020-04-05 21:36:20,434 INFO  17328 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-05 21:36:20,555 INFO  17328 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-05 21:36:20,556 INFO  17328 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-05 21:36:20,557 INFO  17328 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-05 21:36:20,558 INFO  17328 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-05 21:36:20,745 INFO  17328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8081"]
+2020-04-05 21:36:20,794 INFO  17328 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8081 (http) with context path ''
+2020-04-05 21:36:20,812 INFO  17328 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 5.022 seconds (JVM running for 6.286)
+2020-04-05 21:36:34,429 INFO  17328 --- [http-nio-8081-exec-1] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-05 21:36:34,430 INFO  17328 --- [http-nio-8081-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-05 21:36:34,443 INFO  17328 --- [http-nio-8081-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 12 ms
+2020-04-05 21:36:34,523 WARN  17328 --- [http-nio-8081-exec-1] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException/199 : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+2020-04-05 21:37:21,345 WARN  17328 --- [http-nio-8081-exec-2] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException/199 : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+2020-04-05 21:37:23,759 WARN  17328 --- [http-nio-8081-exec-3] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException/199 : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+2020-04-05 21:38:39,429 INFO  17328 --- [http-nio-8081-exec-6] org.apache.juli.logging.DirectJDKLog.log/175 : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:418)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-05 21:38:44,640 WARN  17328 --- [http-nio-8081-exec-7] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException/199 : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+2020-04-05 21:39:03,484 INFO  17328 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-05 21:39:10,137 INFO  4332 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 4332 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-05 21:39:10,146 INFO  4332 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-05 21:39:11,552 WARN  4332 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-05 21:39:12,122 INFO  4332 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8081 (http)
+2020-04-05 21:39:12,134 INFO  4332 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8081"]
+2020-04-05 21:39:12,135 INFO  4332 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-05 21:39:12,135 INFO  4332 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-05 21:39:12,273 INFO  4332 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-05 21:39:12,274 INFO  4332 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1920 ms
+2020-04-05 21:39:13,388 INFO  4332 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-05 21:39:13,588 INFO  4332 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-05 21:39:13,588 INFO  4332 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-05 21:39:13,589 INFO  4332 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-05 21:39:13,590 INFO  4332 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-05 21:39:13,737 INFO  4332 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8081"]
+2020-04-05 21:39:13,771 INFO  4332 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8081 (http) with context path ''
+2020-04-05 21:39:13,776 INFO  4332 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 4.43 seconds (JVM running for 5.724)
+2020-04-05 21:39:13,891 INFO  4332 --- [http-nio-8081-exec-1] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-05 21:39:13,892 INFO  4332 --- [http-nio-8081-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-05 21:39:13,902 INFO  4332 --- [http-nio-8081-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 10 ms
+2020-04-05 21:39:13,983 WARN  4332 --- [http-nio-8081-exec-1] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException/199 : Resolved [org.springframework.web.bind.MissingRequestHeaderException: Missing request header 'userReq' for method parameter of type UserReq]
+2020-04-05 21:39:16,222 WARN  4332 --- [http-nio-8081-exec-2] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException/199 : Resolved [org.springframework.web.bind.MissingRequestHeaderException: Missing request header 'userReq' for method parameter of type UserReq]
+2020-04-05 21:39:43,023 INFO  4332 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-05 21:41:13,321 INFO  10868 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 10868 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-05 21:41:13,327 INFO  10868 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-05 21:41:14,419 WARN  10868 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-05 21:41:15,055 INFO  10868 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8081 (http)
+2020-04-05 21:41:15,076 INFO  10868 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8081"]
+2020-04-05 21:41:15,077 INFO  10868 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-05 21:41:15,077 INFO  10868 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-05 21:41:15,242 INFO  10868 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-05 21:41:15,243 INFO  10868 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1852 ms
+2020-04-05 21:41:16,815 INFO  10868 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-05 21:41:16,939 INFO  10868 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-05 21:41:16,940 INFO  10868 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-05 21:41:16,941 INFO  10868 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-05 21:41:16,942 INFO  10868 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-05 21:41:17,072 INFO  10868 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8081"]
+2020-04-05 21:41:17,102 INFO  10868 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8081 (http) with context path ''
+2020-04-05 21:41:17,107 INFO  10868 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 4.57 seconds (JVM running for 7.717)
+2020-04-05 21:41:19,360 INFO  10868 --- [http-nio-8081-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-05 21:41:19,361 INFO  10868 --- [http-nio-8081-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-05 21:41:19,373 INFO  10868 --- [http-nio-8081-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 11 ms
+2020-04-05 21:41:19,431 WARN  10868 --- [http-nio-8081-exec-2] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException/199 : Resolved [org.springframework.web.bind.MissingRequestHeaderException: Missing request header 'userReq' for method parameter of type UserReq]
+2020-04-05 21:41:20,307 WARN  10868 --- [http-nio-8081-exec-1] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException/199 : Resolved [org.springframework.web.bind.MissingRequestHeaderException: Missing request header 'userReq' for method parameter of type UserReq]

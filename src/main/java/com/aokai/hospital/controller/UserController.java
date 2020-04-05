@@ -1,10 +1,11 @@
 package com.aokai.hospital.controller;
 
-import com.aokai.hospital.po.User;
+import com.aokai.hospital.model.dto.User;
+import com.aokai.hospital.enums.UserTypeEnum;
+import com.aokai.hospital.model.qo.UserReq;
 import com.aokai.hospital.service.UserService;
 import com.aokai.hospital.utils.TokenUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.io.JsonEOFException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -30,10 +30,16 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@RequestHeader Map<String, Object> para) throws JsonProcessingException {
+    public String login(@RequestBody UserReq userReq) throws JsonProcessingException {
+        // 通过账号密码获取用户信息
+        User user = userService.checkUser(userReq);
+        if (user == null) {
+            return "登录失败，账户或密码错误";
+        }
+        String username = user.getUsername();
+        String password = user.getPassword();
 
-        String username = (String)para.get("username");
-        String password = (String) para.get("password");
+        // 生成token
         String token = TokenUtil.sign(new User(username, password));
 
         HashMap<String, Object> hashMap = new HashMap<>();

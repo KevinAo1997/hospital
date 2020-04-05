@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aokai.hospital.dao.AdminMapper">
+  <resultMap id="BaseResultMap" type="com.aokai.hospital.po.Admin">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="account" jdbcType="CHAR" property="account" />
+    <result column="password" jdbcType="CHAR" property="password" />
+    <result column="name" jdbcType="CHAR" property="name" />
+  </resultMap>
+
+  <select id="checkAdmin" resultType="com.aokai.hospital.po.Admin">
+    select * from admin where account = #{username} and password = #{password}
+  </select>
+</mapper>
