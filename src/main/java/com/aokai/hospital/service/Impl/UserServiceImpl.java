@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User checkUser(UserReq userReq) {
-        User user = null;
+        User user = new User();
         UserTypeEnum.UserType userType = userReq.getUserType();
         String username = userReq.getUsername();
         String password = MD5Util.string2MD5(userReq.getPassword());
