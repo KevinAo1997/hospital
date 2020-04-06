@@ -22,4 +22,9 @@
   <select id="checkDoctor" resultType="com.aokai.hospital.po.Doctor">
     select * from doctor where account = #{username} and password = #{password}
   </select>
+
+
+  <select id="getDoctorByRoomName" resultType="com.aokai.hospital.po.Doctor">
+    select * from doctor where office = #{roomName}
+  </select>
 </mapper>
