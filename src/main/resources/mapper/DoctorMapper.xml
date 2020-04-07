@@ -25,6 +25,6 @@
 
 
   <select id="getDoctorByRoomName" resultType="com.aokai.hospital.po.Doctor">
-    select * from doctor where office = #{roomName}
+    select * from doctor where room = #{roomName}
   </select>
 </mapper>
