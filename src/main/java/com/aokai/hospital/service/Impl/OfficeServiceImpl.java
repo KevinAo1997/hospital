@@ -73,6 +73,8 @@ public class OfficeServiceImpl implements OfficeService {
             doctorInfo.setDoctorOffice(doctor.getOfficeName());
             doctorInfo.setDoctorDesc(doctor.getDescription());
             doctorInfo.setPicPath(doctor.getPicpath());
+            doctorInfo.setFee(doctor.getFee());
+            doctorInfo.setSex(doctor.getSex());
 
             doctorInfoList.add(doctorInfo);
         }

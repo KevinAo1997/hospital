@@ -23,4 +23,7 @@
   <select id="getDoctorByOfficeName" resultType="com.aokai.hospital.po.Doctor">
     swlect * from doctor where office_name = #{officeName}
   </select>
+  <select id="searchDoctor" resultType="com.aokai.hospital.po.Doctor">
+    select * from doctor where name like #{docotrName}
+  </select>
 </mapper>

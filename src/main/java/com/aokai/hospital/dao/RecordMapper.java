@@ -1,18 +1,18 @@
 package com.aokai.hospital.dao;
 
-import com.aokai.hospital.po.Workday;
+import com.aokai.hospital.po.Record;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
 @Repository
-public interface WorkdayMapper extends Mapper<Workday> {
+public interface RecordMapper extends Mapper<Record> {
 
     /**
-     * 获取医生工作日信息
+     * 获取患者预约记录
+     * @param patientId
      * @return
-     * @param doctorId
      */
-    List<Workday> getWorkDay(@Param("doctorId") Integer doctorId);
+    List<Record> getRecordByPatientId(@Param("patientId") Integer patientId);
 }

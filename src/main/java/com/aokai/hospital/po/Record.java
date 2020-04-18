@@ -1,10 +1,11 @@
 package com.aokai.hospital.po;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "record")
-public class Recode {
+public class Record {
     /**
      * 主键ID
      */
@@ -50,7 +51,7 @@ public class Recode {
      * 预约记录的时间
      */
     @Column(name = "record_time")
-    private Date recordTime;
+    private LocalDateTime recordTime;
 
     /**
      * 预约状态：1成功，0取消，2待处理
@@ -188,7 +189,7 @@ public class Recode {
      *
      * @return record_time - 预约记录的时间
      */
-    public Date getRecordTime() {
+    public LocalDateTime getRecordTime() {
         return recordTime;
     }
 
@@ -197,7 +198,7 @@ public class Recode {
      *
      * @param recordTime 预约记录的时间
      */
-    public void setRecordTime(Date recordTime) {
+    public void setRecordTime(LocalDateTime recordTime) {
         this.recordTime = recordTime;
     }
 

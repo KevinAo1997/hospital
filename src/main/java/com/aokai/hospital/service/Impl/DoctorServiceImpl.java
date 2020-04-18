@@ -3,6 +3,7 @@ package com.aokai.hospital.service.Impl;
 import com.aokai.hospital.dao.DoctorMapper;
 import com.aokai.hospital.dao.OfficeMapper;
 import com.aokai.hospital.model.dto.DoctorInfo;
+import com.aokai.hospital.model.qo.SearchDoctorNameReq;
 import com.aokai.hospital.model.vo.RecommendDoctorResp;
 import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.service.DoctorService;
@@ -51,6 +52,21 @@ public class DoctorServiceImpl implements DoctorService {
         }
         recommendDoctorResp.setDoctorInfoList(doctorInfoList);
         return recommendDoctorResp;
+    }
+
+    @Override
+    public List<Doctor> searchDoctor(SearchDoctorNameReq searchDoctorNameReq) {
+        String doctorName = "%" + searchDoctorNameReq.getDocotrName();
+        // 搜索医生
+        List<Doctor> doctorList = doctorMapper.searchDoctor(doctorName);
+        return doctorList;
+    }
+
+    @Override
+    public Doctor getDoctor(Integer doctorId) {
+        // 获取医生信息
+        Doctor doctor = doctorMapper.selectByPrimaryKey(doctorId);
+        return doctor;
     }
 
 

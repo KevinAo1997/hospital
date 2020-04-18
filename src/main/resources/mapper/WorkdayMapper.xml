@@ -11,4 +11,7 @@
     <result column="period" jdbcType="VARCHAR" property="period" />
     <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
+  <select id="getWorkDay" resultType="com.aokai.hospital.po.Workday">
+    select * from workday where = doctor_id = #{doctorId}
+  </select>
 </mapper>

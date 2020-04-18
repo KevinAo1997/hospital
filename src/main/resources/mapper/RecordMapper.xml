@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.aokai.hospital.dao.RecodeMapper">
-  <resultMap id="BaseResultMap" type="com.aokai.hospital.po.Recode">
+<mapper namespace="com.aokai.hospital.dao.RecordMapper">
+  <resultMap id="BaseResultMap" type="com.aokai.hospital.po.Record">
     <!--
       WARNING - @mbg.generated
     -->
@@ -15,4 +15,7 @@
     <result column="record_time" jdbcType="TIMESTAMP" property="recordTime" />
     <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
+  <select id="getRecordByPatientId" resultType="com.aokai.hospital.po.Record">
+    select * from record where patient_id = #{patientId}
+  </select>
 </mapper>

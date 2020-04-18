@@ -23,4 +23,11 @@ public interface DoctorMapper extends Mapper<Doctor> {
      * @return
      */
     List<Doctor> getDoctorByOfficeName(@Param("officeName") String officeName);
+
+    /**
+     * 搜索医生
+     * @param docotrName
+     * @return
+     */
+    List<Doctor> searchDoctor(@Param("docotrName") String docotrName);
 }
