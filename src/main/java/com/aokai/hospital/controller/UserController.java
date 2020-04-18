@@ -1,21 +1,16 @@
 package com.aokai.hospital.controller;
 
 import com.aokai.hospital.enums.ApplicationEnum;
-import com.aokai.hospital.exception.ApplicationException;
 import com.aokai.hospital.model.dto.User;
 import com.aokai.hospital.model.qo.RegisterReq;
 import com.aokai.hospital.model.qo.UserReq;
 import com.aokai.hospital.model.vo.result.FailResult;
 import com.aokai.hospital.model.vo.result.Result;
 import com.aokai.hospital.model.vo.result.SuccessResult;
-import com.aokai.hospital.po.Patient;
 import com.aokai.hospital.service.UserService;
 import com.aokai.hospital.utils.MD5Util;
 import com.aokai.hospital.utils.TokenUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.HashMap;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -83,7 +78,7 @@ public class UserController {
         }
 
         User user = new User();
-        user.setUsername(registerReq.getAccount());
+        user.setUsername(registerReq.getUsername());
         user.setPassword(MD5Util.string2MD5(registerReq.getPassword()));
 
         // 生成token

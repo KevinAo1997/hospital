@@ -5,11 +5,10 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="wid" jdbcType="INTEGER" property="wid" />
-    <result column="did" jdbcType="INTEGER" property="did" />
-    <result column="worktime" jdbcType="CHAR" property="worktime" />
-    <result column="ampm" jdbcType="CHAR" property="ampm" />
-    <result column="nsnum" jdbcType="INTEGER" property="nsnum" />
-    <result column="state" jdbcType="CHAR" property="state" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="doctor_id" jdbcType="INTEGER" property="doctorId" />
+    <result column="work_time" jdbcType="VARCHAR" property="workTime" />
+    <result column="period" jdbcType="VARCHAR" property="period" />
+    <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
 </mapper>

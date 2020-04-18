@@ -128,7 +128,7 @@
       <!--<property name="useActualColumnNames" value="false" />-->
     </table>
 
-    <table schema="" tableName="recode" domainObjectName="Recode"
+    <table schema="" tableName="record" domainObjectName="Recode"
       enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
       enableUpdateByExample="false" selectByExampleQueryId="false">
       <!--是否使用实际列名,默认为false-->

@@ -10,7 +10,7 @@ import tk.mybatis.mapper.common.Mapper;
 public interface DoctorMapper extends Mapper<Doctor> {
 
     /**
-     * 获取用户信息
+     * 获取用户
      * @param username
      * @param password
      * @return
@@ -19,8 +19,8 @@ public interface DoctorMapper extends Mapper<Doctor> {
 
     /**
      * 根据科室名称获取医生信息
-     * @param roomName
+     * @param officeName
      * @return
      */
-    List<Doctor> getDoctorByRoomName(@Param("roomName")String roomName);
+    List<Doctor> getDoctorByOfficeName(@Param("officeName") String officeName);
 }

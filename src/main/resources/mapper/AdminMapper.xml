@@ -5,12 +5,12 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="account" jdbcType="CHAR" property="account" />
-    <result column="password" jdbcType="CHAR" property="password" />
-    <result column="name" jdbcType="CHAR" property="name" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
-
   <select id="checkAdmin" resultType="com.aokai.hospital.po.Admin">
-    select * from admin where account = #{username} and password = #{password}
+    select * from admin where username = #{username} and password = #{password}
   </select>
 </mapper>

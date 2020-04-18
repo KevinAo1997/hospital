@@ -5,25 +5,19 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="pid" jdbcType="INTEGER" property="pid" />
-    <result column="account" jdbcType="CHAR" property="account" />
-    <result column="email" jdbcType="CHAR" property="email" />
-    <result column="password" jdbcType="CHAR" property="password" />
-    <result column="name" jdbcType="CHAR" property="name" />
-    <result column="integrity" jdbcType="TINYINT" property="integrity" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
-
-
   <select id="checkPatient" resultType="com.aokai.hospital.po.Patient">
-    select * from patient where account = #{username} and password = #{password}
+    select * from patient where username = #{username} and password = #{password}
   </select>
-
   <select id="checkUserName" resultType="com.aokai.hospital.po.Patient">
-    select * from patient where account = #{account}
+    select * from patient where username = #{username}
   </select>
-
-
   <select id="checkUserEmail" resultType="com.aokai.hospital.po.Patient">
-    select * from patient where email = #{email};
+    select * from patient where email = #{email}
   </select>
 </mapper>

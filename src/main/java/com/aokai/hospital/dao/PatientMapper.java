@@ -2,7 +2,6 @@ package com.aokai.hospital.dao;
 
 import com.aokai.hospital.po.Patient;
 import java.util.List;
-import javax.swing.Painter;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
@@ -11,7 +10,7 @@ import tk.mybatis.mapper.common.Mapper;
 public interface PatientMapper extends Mapper<Patient> {
 
     /**
-     * 获取用户信息
+     * 获取用户
      * @param username
      * @param password
      * @return
@@ -19,11 +18,11 @@ public interface PatientMapper extends Mapper<Patient> {
     Patient checkPatient(@Param("username") String username, @Param("password") String password);
 
     /**
-     * 根据用户账号查询用户信息
-     * @param account
+     * 根据账号获取用户
+     * @param username
      * @return
      */
-    List<Patient> checkUserName(@Param("account") String account);
+    List<Patient> checkUserName(@Param("username") String username);
 
     /**
      * 根据用户邮箱查询用户信息

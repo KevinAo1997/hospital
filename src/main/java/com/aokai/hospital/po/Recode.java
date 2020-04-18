@@ -3,229 +3,219 @@ package com.aokai.hospital.po;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "recode")
+@Table(name = "record")
 public class Recode {
+    /**
+     * 主键ID
+     */
     @Id
-    private Integer rid;
+    private Integer id;
 
     /**
-     * 病人id
+     * 患者id
      */
-    private Integer pid;
+    @Column(name = "patient_id")
+    private Integer patientId;
+
+    /**
+     * 患者名称
+     */
+    @Column(name = "patient_name")
+    private String patientName;
 
     /**
      * 工作日id
      */
-    private Integer wid;
+    @Column(name = "workday_id")
+    private Integer workdayId;
 
     /**
      * 医生id
      */
-    private Integer did;
+    @Column(name = "doctor_id")
+    private Integer doctorId;
 
     /**
-     * 就诊序号
+     * 工作日
      */
-    private Integer serialnumber;
+    @Column(name = "work_time")
+    private String workTime;
 
     /**
-     * 就诊日期
+     * 时间段：医生工作日的上午或下午
      */
-    private Date visitdate;
-
-    /**
-     * 就诊上午或下午
-     */
-    private String visitnoon;
-
-    /**
-     * 就诊时间
-     */
-    private Date visittime;
+    private String period;
 
     /**
      * 预约记录的时间
      */
-    private Date ordertime;
+    @Column(name = "record_time")
+    private Date recordTime;
 
     /**
-     * 预约状态：成功，取消，完成，爽约
+     * 预约状态：1成功，0取消，2待处理
      */
-    private String state;
+    private Integer status;
 
     /**
-     * @return rid
-     */
-    public Integer getRid() {
-        return rid;
-    }
-
-    /**
-     * @param rid
-     */
-    public void setRid(Integer rid) {
-        this.rid = rid;
-    }
-
-    /**
-     * 获取病人id
+     * 获取主键ID
      *
-     * @return pid - 病人id
+     * @return id - 主键ID
      */
-    public Integer getPid() {
-        return pid;
+    public Integer getId() {
+        return id;
     }
 
     /**
-     * 设置病人id
+     * 设置主键ID
      *
-     * @param pid 病人id
+     * @param id 主键ID
      */
-    public void setPid(Integer pid) {
-        this.pid = pid;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取患者id
+     *
+     * @return patient_id - 患者id
+     */
+    public Integer getPatientId() {
+        return patientId;
+    }
+
+    /**
+     * 设置患者id
+     *
+     * @param patientId 患者id
+     */
+    public void setPatientId(Integer patientId) {
+        this.patientId = patientId;
+    }
+
+    /**
+     * 获取患者名称
+     *
+     * @return patient_name - 患者名称
+     */
+    public String getPatientName() {
+        return patientName;
+    }
+
+    /**
+     * 设置患者名称
+     *
+     * @param patientName 患者名称
+     */
+    public void setPatientName(String patientName) {
+        this.patientName = patientName == null ? null : patientName.trim();
     }
 
     /**
      * 获取工作日id
      *
-     * @return wid - 工作日id
+     * @return workday_id - 工作日id
      */
-    public Integer getWid() {
-        return wid;
+    public Integer getWorkdayId() {
+        return workdayId;
     }
 
     /**
      * 设置工作日id
      *
-     * @param wid 工作日id
+     * @param workdayId 工作日id
      */
-    public void setWid(Integer wid) {
-        this.wid = wid;
+    public void setWorkdayId(Integer workdayId) {
+        this.workdayId = workdayId;
     }
 
     /**
      * 获取医生id
      *
-     * @return did - 医生id
+     * @return doctor_id - 医生id
      */
-    public Integer getDid() {
-        return did;
+    public Integer getDoctorId() {
+        return doctorId;
     }
 
     /**
      * 设置医生id
      *
-     * @param did 医生id
+     * @param doctorId 医生id
      */
-    public void setDid(Integer did) {
-        this.did = did;
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
     }
 
     /**
-     * 获取就诊序号
+     * 获取工作日
      *
-     * @return serialnumber - 就诊序号
+     * @return work_time - 工作日
      */
-    public Integer getSerialnumber() {
-        return serialnumber;
+    public String getWorkTime() {
+        return workTime;
     }
 
     /**
-     * 设置就诊序号
+     * 设置工作日
      *
-     * @param serialnumber 就诊序号
+     * @param workTime 工作日
      */
-    public void setSerialnumber(Integer serialnumber) {
-        this.serialnumber = serialnumber;
+    public void setWorkTime(String workTime) {
+        this.workTime = workTime == null ? null : workTime.trim();
     }
 
     /**
-     * 获取就诊日期
+     * 获取时间段：医生工作日的上午或下午
      *
-     * @return visitdate - 就诊日期
+     * @return period - 时间段：医生工作日的上午或下午
      */
-    public Date getVisitdate() {
-        return visitdate;
+    public String getPeriod() {
+        return period;
     }
 
     /**
-     * 设置就诊日期
+     * 设置时间段：医生工作日的上午或下午
      *
-     * @param visitdate 就诊日期
+     * @param period 时间段：医生工作日的上午或下午
      */
-    public void setVisitdate(Date visitdate) {
-        this.visitdate = visitdate;
-    }
-
-    /**
-     * 获取就诊上午或下午
-     *
-     * @return visitnoon - 就诊上午或下午
-     */
-    public String getVisitnoon() {
-        return visitnoon;
-    }
-
-    /**
-     * 设置就诊上午或下午
-     *
-     * @param visitnoon 就诊上午或下午
-     */
-    public void setVisitnoon(String visitnoon) {
-        this.visitnoon = visitnoon == null ? null : visitnoon.trim();
-    }
-
-    /**
-     * 获取就诊时间
-     *
-     * @return visittime - 就诊时间
-     */
-    public Date getVisittime() {
-        return visittime;
-    }
-
-    /**
-     * 设置就诊时间
-     *
-     * @param visittime 就诊时间
-     */
-    public void setVisittime(Date visittime) {
-        this.visittime = visittime;
+    public void setPeriod(String period) {
+        this.period = period == null ? null : period.trim();
     }
 
     /**
      * 获取预约记录的时间
      *
-     * @return ordertime - 预约记录的时间
+     * @return record_time - 预约记录的时间
      */
-    public Date getOrdertime() {
-        return ordertime;
+    public Date getRecordTime() {
+        return recordTime;
     }
 
     /**
      * 设置预约记录的时间
      *
-     * @param ordertime 预约记录的时间
+     * @param recordTime 预约记录的时间
      */
-    public void setOrdertime(Date ordertime) {
-        this.ordertime = ordertime;
+    public void setRecordTime(Date recordTime) {
+        this.recordTime = recordTime;
     }
 
     /**
-     * 获取预约状态：成功，取消，完成，爽约
+     * 获取预约状态：1成功，0取消，2待处理
      *
-     * @return state - 预约状态：成功，取消，完成，爽约
+     * @return status - 预约状态：1成功，0取消，2待处理
      */
-    public String getState() {
-        return state;
+    public Integer getStatus() {
+        return status;
     }
 
     /**
-     * 设置预约状态：成功，取消，完成，爽约
+     * 设置预约状态：1成功，0取消，2待处理
      *
-     * @param state 预约状态：成功，取消，完成，爽约
+     * @param status 预约状态：1成功，0取消，2待处理
      */
-    public void setState(String state) {
-        this.state = state == null ? null : state.trim();
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

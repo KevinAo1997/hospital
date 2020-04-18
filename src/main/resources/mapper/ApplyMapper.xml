@@ -5,13 +5,12 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="aid" jdbcType="INTEGER" property="aid" />
-    <result column="did" jdbcType="INTEGER" property="did" />
-    <result column="dname" jdbcType="CHAR" property="dname" />
-    <result column="wid" jdbcType="INTEGER" property="wid" />
-    <result column="reason" jdbcType="CHAR" property="reason" />
-    <result column="applytime" jdbcType="TIMESTAMP" property="applytime" />
-    <result column="request" jdbcType="CHAR" property="request" />
-    <result column="state" jdbcType="CHAR" property="state" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="doctor_id" jdbcType="INTEGER" property="doctorId" />
+    <result column="doctor_name" jdbcType="VARCHAR" property="doctorName" />
+    <result column="workday_id" jdbcType="INTEGER" property="workdayId" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="request" jdbcType="VARCHAR" property="request" />
+    <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
 </mapper>

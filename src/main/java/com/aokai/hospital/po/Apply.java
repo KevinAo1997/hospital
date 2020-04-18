@@ -1,21 +1,32 @@
 package com.aokai.hospital.po;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "apply")
 public class Apply {
+    /**
+     * 主键ID
+     */
     @Id
-    private Integer aid;
+    private Integer id;
 
     /**
      * 医生id
      */
-    private Integer did;
+    @Column(name = "doctor_id")
+    private Integer doctorId;
 
-    private String dname;
+    /**
+     * 医生名称
+     */
+    @Column(name = "doctor_name")
+    private String doctorName;
 
-    private Integer wid;
+    /**
+     * 工作日id
+     */
+    @Column(name = "workday_id")
+    private Integer workdayId;
 
     /**
      * 原因
@@ -23,78 +34,85 @@ public class Apply {
     private String reason;
 
     /**
-     * 医生这天上午或下午的号源数
-     */
-    private Date applytime;
-
-    /**
-     * 状态：申请出诊，申请停诊
+     * 申请状态：申请出诊，申请停诊
      */
     private String request;
 
     /**
-     * 状态：等待处理，同意，拒绝
+     * 状态：2等待处理，1同意，0拒绝
      */
-    private String state;
+    private Integer status;
 
     /**
-     * @return aid
+     * 获取主键ID
+     *
+     * @return id - 主键ID
      */
-    public Integer getAid() {
-        return aid;
+    public Integer getId() {
+        return id;
     }
 
     /**
-     * @param aid
+     * 设置主键ID
+     *
+     * @param id 主键ID
      */
-    public void setAid(Integer aid) {
-        this.aid = aid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**
      * 获取医生id
      *
-     * @return did - 医生id
+     * @return doctor_id - 医生id
      */
-    public Integer getDid() {
-        return did;
+    public Integer getDoctorId() {
+        return doctorId;
     }
 
     /**
      * 设置医生id
      *
-     * @param did 医生id
+     * @param doctorId 医生id
      */
-    public void setDid(Integer did) {
-        this.did = did;
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
     }
 
     /**
-     * @return dname
+     * 获取医生名称
+     *
+     * @return doctor_name - 医生名称
      */
-    public String getDname() {
-        return dname;
+    public String getDoctorName() {
+        return doctorName;
     }
 
     /**
-     * @param dname
+     * 设置医生名称
+     *
+     * @param doctorName 医生名称
      */
-    public void setDname(String dname) {
-        this.dname = dname == null ? null : dname.trim();
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName == null ? null : doctorName.trim();
     }
 
     /**
-     * @return wid
+     * 获取工作日id
+     *
+     * @return workday_id - 工作日id
      */
-    public Integer getWid() {
-        return wid;
+    public Integer getWorkdayId() {
+        return workdayId;
     }
 
     /**
-     * @param wid
+     * 设置工作日id
+     *
+     * @param workdayId 工作日id
      */
-    public void setWid(Integer wid) {
-        this.wid = wid;
+    public void setWorkdayId(Integer workdayId) {
+        this.workdayId = workdayId;
     }
 
     /**
@@ -116,56 +134,38 @@ public class Apply {
     }
 
     /**
-     * 获取医生这天上午或下午的号源数
+     * 获取申请状态：申请出诊，申请停诊
      *
-     * @return applytime - 医生这天上午或下午的号源数
-     */
-    public Date getApplytime() {
-        return applytime;
-    }
-
-    /**
-     * 设置医生这天上午或下午的号源数
-     *
-     * @param applytime 医生这天上午或下午的号源数
-     */
-    public void setApplytime(Date applytime) {
-        this.applytime = applytime;
-    }
-
-    /**
-     * 获取状态：申请出诊，申请停诊
-     *
-     * @return request - 状态：申请出诊，申请停诊
+     * @return request - 申请状态：申请出诊，申请停诊
      */
     public String getRequest() {
         return request;
     }
 
     /**
-     * 设置状态：申请出诊，申请停诊
+     * 设置申请状态：申请出诊，申请停诊
      *
-     * @param request 状态：申请出诊，申请停诊
+     * @param request 申请状态：申请出诊，申请停诊
      */
     public void setRequest(String request) {
         this.request = request == null ? null : request.trim();
     }
 
     /**
-     * 获取状态：等待处理，同意，拒绝
+     * 获取状态：2等待处理，1同意，0拒绝
      *
-     * @return state - 状态：等待处理，同意，拒绝
+     * @return status - 状态：2等待处理，1同意，0拒绝
      */
-    public String getState() {
-        return state;
+    public Integer getStatus() {
+        return status;
     }
 
     /**
-     * 设置状态：等待处理，同意，拒绝
+     * 设置状态：2等待处理，1同意，0拒绝
      *
-     * @param state 状态：等待处理，同意，拒绝
+     * @param status 状态：2等待处理，1同意，0拒绝
      */
-    public void setState(String state) {
-        this.state = state == null ? null : state.trim();
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

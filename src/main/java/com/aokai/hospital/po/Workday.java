@@ -4,135 +4,121 @@ import javax.persistence.*;
 
 @Table(name = "workday")
 public class Workday {
+    /**
+     * 主键ID
+     */
     @Id
-    private Integer wid;
+    private Integer id;
 
     /**
      * 医生id
      */
-    private Integer did;
+    @Column(name = "doctor_id")
+    private Integer doctorId;
 
     /**
-     * 医生工作日，星期几
+     * 工作日
      */
-    private String worktime;
+    @Column(name = "work_time")
+    private String workTime;
 
     /**
-     * 医生工作日的上午或下午
+     * 时间段：医生工作日的上午或下午
      */
-    private String ampm;
+    private String period;
 
     /**
-     * 医生这天上午或下午的号源数
+     * 状态:1预约，0停诊
      */
-    private Integer nsnum;
+    private Integer status;
 
     /**
-     * 状态：已满，预约，停诊
+     * 获取主键ID
+     *
+     * @return id - 主键ID
      */
-    private String state;
-
-    /**
-     * @return wid
-     */
-    public Integer getWid() {
-        return wid;
+    public Integer getId() {
+        return id;
     }
 
     /**
-     * @param wid
+     * 设置主键ID
+     *
+     * @param id 主键ID
      */
-    public void setWid(Integer wid) {
-        this.wid = wid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**
      * 获取医生id
      *
-     * @return did - 医生id
+     * @return doctor_id - 医生id
      */
-    public Integer getDid() {
-        return did;
+    public Integer getDoctorId() {
+        return doctorId;
     }
 
     /**
      * 设置医生id
      *
-     * @param did 医生id
+     * @param doctorId 医生id
      */
-    public void setDid(Integer did) {
-        this.did = did;
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
     }
 
     /**
-     * 获取医生工作日，星期几
+     * 获取工作日
      *
-     * @return worktime - 医生工作日，星期几
+     * @return work_time - 工作日
      */
-    public String getWorktime() {
-        return worktime;
+    public String getWorkTime() {
+        return workTime;
     }
 
     /**
-     * 设置医生工作日，星期几
+     * 设置工作日
      *
-     * @param worktime 医生工作日，星期几
+     * @param workTime 工作日
      */
-    public void setWorktime(String worktime) {
-        this.worktime = worktime == null ? null : worktime.trim();
+    public void setWorkTime(String workTime) {
+        this.workTime = workTime == null ? null : workTime.trim();
     }
 
     /**
-     * 获取医生工作日的上午或下午
+     * 获取时间段：医生工作日的上午或下午
      *
-     * @return ampm - 医生工作日的上午或下午
+     * @return period - 时间段：医生工作日的上午或下午
      */
-    public String getAmpm() {
-        return ampm;
+    public String getPeriod() {
+        return period;
     }
 
     /**
-     * 设置医生工作日的上午或下午
+     * 设置时间段：医生工作日的上午或下午
      *
-     * @param ampm 医生工作日的上午或下午
+     * @param period 时间段：医生工作日的上午或下午
      */
-    public void setAmpm(String ampm) {
-        this.ampm = ampm == null ? null : ampm.trim();
+    public void setPeriod(String period) {
+        this.period = period == null ? null : period.trim();
     }
 
     /**
-     * 获取医生这天上午或下午的号源数
+     * 获取状态:1预约，0停诊
      *
-     * @return nsnum - 医生这天上午或下午的号源数
+     * @return status - 状态:1预约，0停诊
      */
-    public Integer getNsnum() {
-        return nsnum;
+    public Integer getStatus() {
+        return status;
     }
 
     /**
-     * 设置医生这天上午或下午的号源数
+     * 设置状态:1预约，0停诊
      *
-     * @param nsnum 医生这天上午或下午的号源数
+     * @param status 状态:1预约，0停诊
      */
-    public void setNsnum(Integer nsnum) {
-        this.nsnum = nsnum;
-    }
-
-    /**
-     * 获取状态：已满，预约，停诊
-     *
-     * @return state - 状态：已满，预约，停诊
-     */
-    public String getState() {
-        return state;
-    }
-
-    /**
-     * 设置状态：已满，预约，停诊
-     *
-     * @param state 状态：已满，预约，停诊
-     */
-    public void setState(String state) {
-        this.state = state == null ? null : state.trim();
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

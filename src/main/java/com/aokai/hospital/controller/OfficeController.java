@@ -1,12 +1,11 @@
 package com.aokai.hospital.controller;
 
-import com.aokai.hospital.model.qo.RoomDetailReq;
-import com.aokai.hospital.model.vo.RecommendDoctorResp;
-import com.aokai.hospital.model.vo.RoomDetailResp;
-import com.aokai.hospital.model.vo.RoomResp;
+import com.aokai.hospital.model.qo.OfficeDetailReq;
+import com.aokai.hospital.model.vo.OfficeDetailResp;
+import com.aokai.hospital.model.vo.OfficeResp;
 import com.aokai.hospital.model.vo.result.Result;
 import com.aokai.hospital.model.vo.result.SuccessResult;
-import com.aokai.hospital.service.RoomService;
+import com.aokai.hospital.service.OfficeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,34 +21,34 @@ import org.springframework.web.bind.annotation.RestController;
  * @date : Created in 2020/4/6 17:17
  */
 @RestController
-@RequestMapping(value = "/room")
-public class RoomController {
+@RequestMapping(value = "/office")
+public class OfficeController {
 
     @Autowired
-    private RoomService roomService;
+    private OfficeService officeService;
 
     /**
      * 获取科室列表
      * @return
      */
-    @RequestMapping(value = "/getRoomList", method = RequestMethod.POST)
+    @RequestMapping(value = "/getOfficeList", method = RequestMethod.POST)
     @ResponseBody
-    public Result getRoomList() {
+    public Result getOfficeList() {
         // 获取推荐医生信息
-        RoomResp roomResp = roomService.getRoomList();
-        return new SuccessResult<>(roomResp);
+        OfficeResp officeResp = officeService.getOfficeList();
+        return new SuccessResult<>(officeResp);
     }
 
     /**
      * 获取科室详情列表
      * @return
      */
-    @RequestMapping(value = "/getRoomDetailList", method = RequestMethod.POST)
+    @RequestMapping(value = "/getOfficeDetailList", method = RequestMethod.POST)
     @ResponseBody
-    public Result getRoomDetailList(@RequestBody @Validated RoomDetailReq roomDetailReq) {
+    public Result getOfficeDetailList(@RequestBody @Validated OfficeDetailReq officeDetailReq) {
         // 获取推荐医生信息
-        RoomDetailResp roomDetailResp = roomService.getRoomDetailList(roomDetailReq);
-        return new SuccessResult<>(roomDetailResp);
+        OfficeDetailResp officeDetailResp = officeService.getOfficeDetailList(officeDetailReq);
+        return new SuccessResult<>(officeDetailResp);
     }
 
 

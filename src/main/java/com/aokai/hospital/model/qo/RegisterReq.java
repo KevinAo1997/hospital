@@ -21,7 +21,7 @@ public class RegisterReq implements Serializable {
      * 用户账号
      */
     @NotBlank
-    private String account;
+    private String username;
 
     /**
      * 用户密码

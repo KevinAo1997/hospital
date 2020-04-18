@@ -13,7 +13,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class RoomDetailReq implements Serializable {
+public class OfficeDetailReq implements Serializable {
 
     private static final long serialVersionUID = -2836498953989730065L;
 
@@ -21,5 +21,5 @@ public class RoomDetailReq implements Serializable {
      * 科室名称
      */
     @NotBlank
-    private String roomName;
+    private String officeName;
 }

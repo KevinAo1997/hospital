@@ -5,26 +5,22 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="did" jdbcType="INTEGER" property="did" />
-    <result column="account" jdbcType="CHAR" property="account" />
-    <result column="password" jdbcType="CHAR" property="password" />
-    <result column="dname" jdbcType="CHAR" property="dname" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="fee" jdbcType="INTEGER" property="fee" />
-    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="age" jdbcType="TINYINT" property="age" />
-    <result column="office" jdbcType="CHAR" property="office" />
-    <result column="room" jdbcType="CHAR" property="room" />
-    <result column="career" jdbcType="CHAR" property="career" />
+    <result column="office_name" jdbcType="VARCHAR" property="officeName" />
+    <result column="career" jdbcType="VARCHAR" property="career" />
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="picpath" jdbcType="VARCHAR" property="picpath" />
   </resultMap>
-
   <select id="checkDoctor" resultType="com.aokai.hospital.po.Doctor">
-    select * from doctor where account = #{username} and password = #{password}
+    select * from doctor where username = #{username} and password = #{password}
   </select>
-
-
-  <select id="getDoctorByRoomName" resultType="com.aokai.hospital.po.Doctor">
-    select * from doctor where room = #{roomName}
+  <select id="getDoctorByOfficeName" resultType="com.aokai.hospital.po.Doctor">
+    swlect * from doctor where office_name = #{officeName}
   </select>
 </mapper>

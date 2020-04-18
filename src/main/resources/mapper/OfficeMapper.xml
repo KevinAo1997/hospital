@@ -5,8 +5,8 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="officename" jdbcType="CHAR" property="officename" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="doctornum" jdbcType="INTEGER" property="doctornum" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="office_name" jdbcType="VARCHAR" property="officeName" />
+    <result column="doctor_num" jdbcType="INTEGER" property="doctorNum" />
   </resultMap>
 </mapper>

@@ -5,15 +5,14 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="rid" jdbcType="INTEGER" property="rid" />
-    <result column="pid" jdbcType="INTEGER" property="pid" />
-    <result column="wid" jdbcType="INTEGER" property="wid" />
-    <result column="did" jdbcType="INTEGER" property="did" />
-    <result column="serialnumber" jdbcType="INTEGER" property="serialnumber" />
-    <result column="visitdate" jdbcType="DATE" property="visitdate" />
-    <result column="visitnoon" jdbcType="CHAR" property="visitnoon" />
-    <result column="visittime" jdbcType="TIME" property="visittime" />
-    <result column="ordertime" jdbcType="TIMESTAMP" property="ordertime" />
-    <result column="state" jdbcType="CHAR" property="state" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="patient_id" jdbcType="INTEGER" property="patientId" />
+    <result column="patient_name" jdbcType="VARCHAR" property="patientName" />
+    <result column="workday_id" jdbcType="INTEGER" property="workdayId" />
+    <result column="doctor_id" jdbcType="INTEGER" property="doctorId" />
+    <result column="work_time" jdbcType="VARCHAR" property="workTime" />
+    <result column="period" jdbcType="VARCHAR" property="period" />
+    <result column="record_time" jdbcType="TIMESTAMP" property="recordTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
 </mapper>

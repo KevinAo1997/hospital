@@ -1,8 +1,6 @@
 package com.aokai.hospital.serviceImpl;
 
 import com.aokai.hospital.dao.DoctorMapper;
-import com.aokai.hospital.po.Doctor;
-import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.util.ApplicationContextTestUtils;

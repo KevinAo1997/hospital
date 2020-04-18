@@ -14,7 +14,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class RoomDetailResp implements Serializable {
+public class OfficeDetailResp implements Serializable {
 
     private static final long serialVersionUID = -4363320803193287589L;
 

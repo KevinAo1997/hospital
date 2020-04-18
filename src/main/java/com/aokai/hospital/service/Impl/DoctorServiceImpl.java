@@ -1,7 +1,7 @@
 package com.aokai.hospital.service.Impl;
 
 import com.aokai.hospital.dao.DoctorMapper;
-import com.aokai.hospital.dao.RoomMapper;
+import com.aokai.hospital.dao.OfficeMapper;
 import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.vo.RecommendDoctorResp;
 import com.aokai.hospital.po.Doctor;
@@ -27,7 +27,7 @@ public class DoctorServiceImpl implements DoctorService {
     private DoctorMapper doctorMapper;
 
     @Autowired
-    private RoomMapper roomMapper;
+    private OfficeMapper officeMapper;
 
     @Override
     public RecommendDoctorResp getRecommendDoctor() {
@@ -42,8 +42,8 @@ public class DoctorServiceImpl implements DoctorService {
         for (Doctor doctor : doctorList) {
             DoctorInfo doctorInfo = new DoctorInfo();
             doctorInfo.setDoctorCareer(doctor.getCareer());
-            doctorInfo.setDoctorName(doctor.getDname());
-            doctorInfo.setDoctorOffice(doctor.getRoom());
+            doctorInfo.setDoctorName(doctor.getName());
+            doctorInfo.setDoctorOffice(doctor.getOfficeName());
             doctorInfo.setDoctorDesc(doctor.getDescription());
             doctorInfo.setPicPath(doctor.getPicpath());
 
