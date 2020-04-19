@@ -53,14 +53,23 @@ public class UserServiceImpl implements UserService {
         // 管理员
         if (UserType.ADMIN.equals(userType)) {
             Admin admin = adminMapper.checkAdmin(username, password);
+            if (admin == null) {
+                return null;
+            }
             BeanUtils.copyProperties(admin, user);
             // 患者
         } else if (UserType.PATIENT.equals(userType)) {
             Patient patient = patientMapper.checkPatient(username, password);
+            if (patient == null) {
+                return null;
+            }
             BeanUtils.copyProperties(patient, user);
             // 医生
         } else {
             Doctor doctor = doctorMapper.checkDoctor(username, password);
+            if (doctor == null) {
+                return null;
+            }
             BeanUtils.copyProperties(doctor, user);
         }
         return user;

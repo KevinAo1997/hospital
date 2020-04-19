@@ -2,9 +2,12 @@ package com.aokai.hospital.service.Impl;
 
 import com.aokai.hospital.dao.DoctorMapper;
 import com.aokai.hospital.dao.RecordMapper;
+import com.aokai.hospital.model.dto.DoctorRecordInfo;
 import com.aokai.hospital.model.dto.PatientRecordInfo;
 import com.aokai.hospital.model.qo.GetRecordListReq;
 import com.aokai.hospital.model.qo.InsertRecordReq;
+import com.aokai.hospital.model.qo.UpdateRecordReq;
+import com.aokai.hospital.po.Apply;
 import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.po.Record;
 import com.aokai.hospital.service.RecordService;
@@ -78,5 +81,33 @@ public class RecordServiceImpl implements RecordService {
         BeanUtils.copyProperties(recordPageInfo, patientRecordInfoPageInfo);
         patientRecordInfoPageInfo.setList(patientRecordInfoList);
         return patientRecordInfoPageInfo;
+    }
+
+    @Override
+    public PageInfo<DoctorRecordInfo> getDoctorRecordList(Integer doctorId) {
+        List<DoctorRecordInfo> doctorRecordInfoList;
+        // 获取医生的患者预约记录
+        List<Record> recordList = recordMapper.getRecordByDoctorId(doctorId);
+        if (CollectionUtils.isEmpty(recordList)) {
+            return new PageInfo<>();
+        }
+        PageInfo<Record> recordPageInfo = new PageInfo<>(recordList);
+        // 复制
+        doctorRecordInfoList = BeanUtil.copyPropertiesByFastJson(recordPageInfo.getList(), DoctorRecordInfo.class);
+        PageInfo<DoctorRecordInfo> doctorRecordInfoPageInfo = new PageInfo<>();
+        BeanUtils.copyProperties(recordPageInfo, doctorRecordInfoPageInfo);
+
+        doctorRecordInfoPageInfo.setList(doctorRecordInfoList);
+        return doctorRecordInfoPageInfo;
+    }
+
+    @Override
+    public Boolean updateRecord(UpdateRecordReq updateRecordReq) {
+        Record record = new Record();
+        record.setStatus(updateRecordReq.getStatus());
+        record.setId(updateRecordReq.getRecordId());
+
+        Integer update = recordMapper.updateByPrimaryKeySelective(record);
+        return update > 0;
     }
 }

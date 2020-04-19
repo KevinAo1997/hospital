@@ -15,4 +15,11 @@ public interface RecordMapper extends Mapper<Record> {
      * @return
      */
     List<Record> getRecordByPatientId(@Param("patientId") Integer patientId);
+
+    /**
+     * 获取医生的患者预约记录
+     * @param doctorId
+     * @return
+     */
+    List<Record> getRecordByDoctorId(@Param("doctorId") Integer doctorId);
 }

@@ -50,6 +50,11 @@ public class DoctorController {
         return new SuccessResult<>(doctor);
     }
 
+    /**
+     * 获取医生信息
+     * @param getDoctorReq
+     * @return
+     */
     @RequestMapping(value = "/getDoctor", method = RequestMethod.POST)
     @ResponseBody
     public Result getDoctor(@RequestBody @Validated GetDoctorReq getDoctorReq) {

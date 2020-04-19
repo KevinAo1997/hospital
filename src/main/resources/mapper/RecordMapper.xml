@@ -18,4 +18,8 @@
   <select id="getRecordByPatientId" resultType="com.aokai.hospital.po.Record">
     select * from record where patient_id = #{patientId}
   </select>
+
+  <select id="getRecordByDoctorId" resultType="com.aokai.hospital.po.Record">
+        select * from record where doctor_id = #{doctorId}
+  </select>
 </mapper>

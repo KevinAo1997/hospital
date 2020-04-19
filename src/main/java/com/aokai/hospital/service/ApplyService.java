@@ -1,6 +1,8 @@
 package com.aokai.hospital.service;
 
 import com.aokai.hospital.model.dto.ApplyInfo;
+import com.aokai.hospital.model.qo.DeleteApplyReq;
+import com.aokai.hospital.model.qo.InsertApplyReq;
 import com.github.pagehelper.PageInfo;
 
 /**
@@ -17,4 +19,18 @@ public interface ApplyService {
      * @return
      */
     PageInfo<ApplyInfo> getApply(Integer doctorId);
+
+    /**
+     * 申请工作日
+     * @param insertApplyReq
+     * @return
+     */
+    Boolean insertApply(InsertApplyReq insertApplyReq);
+
+    /**
+     * 取消申请工作日
+     * @param deleteApplyReq
+     * @return
+     */
+    Boolean deleteApply(DeleteApplyReq deleteApplyReq);
 }

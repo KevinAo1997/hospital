@@ -12,6 +12,7 @@
     <result column="reason" jdbcType="VARCHAR" property="reason" />
     <result column="request" jdbcType="VARCHAR" property="request" />
     <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="apply_time" jdbcType="TIMESTAMP" property="applyTime" />
   </resultMap>
   <select id="getApply" resultType="com.aokai.hospital.po.Apply">
     select * from apply where doctor_id = #{doctorId}

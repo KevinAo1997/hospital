@@ -3,11 +3,14 @@ package com.aokai.hospital.service.Impl;
 import com.aokai.hospital.dao.ApplyMapper;
 import com.aokai.hospital.dao.WorkdayMapper;
 import com.aokai.hospital.model.dto.ApplyInfo;
+import com.aokai.hospital.model.qo.DeleteApplyReq;
+import com.aokai.hospital.model.qo.InsertApplyReq;
 import com.aokai.hospital.po.Apply;
 import com.aokai.hospital.po.Workday;
 import com.aokai.hospital.service.ApplyService;
 import com.aokai.hospital.utils.BeanUtil;
 import com.github.pagehelper.PageInfo;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
@@ -61,5 +64,23 @@ public class ApplyServiceImpl implements ApplyService {
         applyInfoPageInfo.setList(applyInfoList);
 
         return applyInfoPageInfo;
+    }
+
+    @Override
+    public Boolean insertApply(InsertApplyReq insertApplyReq) {
+        Apply apply = new Apply();
+        BeanUtils.copyProperties(insertApplyReq, apply);
+        apply.setApplyTime(LocalDateTime.now());
+        apply.setStatus(2);
+        // 申请
+        Integer insert = applyMapper.insert(apply);
+        return insert > 0;
+    }
+
+    @Override
+    public Boolean deleteApply(DeleteApplyReq deleteApplyReq) {
+        // 取消申请
+        Integer delete = applyMapper.deleteByPrimaryKey(deleteApplyReq.getApplyId());
+        return delete > 0;
     }
 }

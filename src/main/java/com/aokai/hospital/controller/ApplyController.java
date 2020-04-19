@@ -1,17 +1,15 @@
 package com.aokai.hospital.controller;
 
 import com.aokai.hospital.model.dto.ApplyInfo;
+import com.aokai.hospital.model.qo.DeleteApplyReq;
 import com.aokai.hospital.model.qo.GetApplyReq;
-import com.aokai.hospital.model.qo.GetWorkDayReq;
+import com.aokai.hospital.model.qo.InsertApplyReq;
+import com.aokai.hospital.model.vo.result.FailResult;
 import com.aokai.hospital.model.vo.result.Result;
 import com.aokai.hospital.model.vo.result.SuccessResult;
-import com.aokai.hospital.po.Apply;
-import com.aokai.hospital.po.Workday;
 import com.aokai.hospital.service.ApplyService;
-import com.aokai.hospital.service.WorkDayService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -52,13 +50,36 @@ public class ApplyController {
         return new SuccessResult<>(applyInfoPageInfo);
     }
 
+    /**
+     * 申请工作日
+     * @param insertApplyReq
+     * @return
+     */
     @RequestMapping(value = "/insertApply", method = RequestMethod.POST)
     @ResponseBody
-    public Result insertApply(@RequestBody @Validated GetApplyReq getApplyReq) {
+    public Result insertApply(@RequestBody @Validated InsertApplyReq insertApplyReq) {
         // 申请工作日
-        PageInfo<ApplyInfo> applyInfoPageInfo = applyService.getApply(getApplyReq.getDoctorId());
+        Boolean insertAppy = applyService.insertApply(insertApplyReq);
+        if (insertAppy) {
+            return new SuccessResult<>();
+        }
+        return new FailResult<>();
+    }
 
-        return new SuccessResult<>(applyInfoPageInfo);
+    /**
+     * 取消申请工作日
+     * @param deleteApplyReq
+     * @return
+     */
+    @RequestMapping(value = "/deleteApply", method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteApply(@RequestBody @Validated DeleteApplyReq deleteApplyReq) {
+        // 取消申请工作日
+        Boolean deleteApply = applyService.deleteApply(deleteApplyReq);
+        if (deleteApply) {
+            return new SuccessResult<>();
+        }
+        return new FailResult<>();
     }
 
 

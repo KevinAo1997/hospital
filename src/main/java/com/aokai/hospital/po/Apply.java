@@ -1,5 +1,7 @@
 package com.aokai.hospital.po;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "apply")
@@ -42,6 +44,9 @@ public class Apply {
      * 状态：2等待处理，1同意，0拒绝
      */
     private Integer status;
+
+    @Column(name = "apply_time")
+    private LocalDateTime applyTime;
 
     /**
      * 获取主键ID
@@ -167,5 +172,19 @@ public class Apply {
      */
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    /**
+     * @return apply_time
+     */
+    public LocalDateTime getApplyTime() {
+        return applyTime;
+    }
+
+    /**
+     * @param applyTime
+     */
+    public void setApplyTime(LocalDateTime applyTime) {
+        this.applyTime = applyTime;
     }
 }
