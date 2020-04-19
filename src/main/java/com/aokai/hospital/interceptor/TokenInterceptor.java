@@ -22,7 +22,7 @@ public class TokenInterceptor implements HandlerInterceptor {
             return true;
         }
         response.setCharacterEncoding("utf-8");
-        String token = request.getHeader("token");
+        String token = request.getHeader("Authorization");
         if(token != null){
             boolean result = TokenUtil.verify(token);
             if(result){
