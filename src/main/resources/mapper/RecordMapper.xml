@@ -15,11 +15,16 @@
     <result column="record_time" jdbcType="TIMESTAMP" property="recordTime" />
     <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
+  <sql id="Base_Column_List">
+    id, patient_id AS patientId, patient_name AS patientName, workday_id AS workdayId, doctor_id AS doctorId, work_time AS workTime, period, record_time AS recordTime, status
+  </sql>
   <select id="getRecordByPatientId" resultType="com.aokai.hospital.po.Record">
-    select * from record where patient_id = #{patientId}
+    select<include refid="Base_Column_List"/>
+    from record where patient_id = #{patientId}
   </select>
 
   <select id="getRecordByDoctorId" resultType="com.aokai.hospital.po.Record">
-        select * from record where doctor_id = #{doctorId}
+    select<include refid="Base_Column_List"/>
+    from record where doctor_id = #{doctorId}
   </select>
 </mapper>

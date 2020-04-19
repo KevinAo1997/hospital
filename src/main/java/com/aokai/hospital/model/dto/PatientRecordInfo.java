@@ -19,6 +19,11 @@ public class PatientRecordInfo implements Serializable {
     private static final long serialVersionUID = -8565444079128924230L;
 
     /**
+     * 医生ID
+     */
+    private Integer doctorId;
+
+    /**
      * 医生名称
      */
     private String doctorName;

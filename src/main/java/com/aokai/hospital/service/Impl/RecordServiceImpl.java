@@ -68,7 +68,7 @@ public class RecordServiceImpl implements RecordService {
             if (doctor == null) {
                 continue;
             }
-            Optional<PatientRecordInfo> patientRecordInfoOptional = patientRecordInfoList.stream().filter(o -> o.getDoctorName().equals(doctor.getName())).findAny();
+            Optional<PatientRecordInfo> patientRecordInfoOptional = patientRecordInfoList.stream().filter(o -> o.getDoctorId().equals(doctor.getId())).findAny();
             if (patientRecordInfoOptional.isPresent()) {
                 PatientRecordInfo patientRecordInfo = patientRecordInfoOptional.get();
                 patientRecordInfo.setDoctorName(doctor.getName());
