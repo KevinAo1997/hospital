@@ -11,6 +11,8 @@ import com.aokai.hospital.service.UserService;
 import com.aokai.hospital.utils.MD5Util;
 import com.aokai.hospital.utils.TokenUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import java.util.HashMap;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,7 +51,10 @@ public class UserController {
         }
         // 生成token
         String token = TokenUtil.sign(user);
-        return new SuccessResult<>(token);
+        HashMap<String, Object> userMap = new HashMap<>();
+        userMap.put("user", user);
+        userMap.put("token", token);
+        return new SuccessResult<>(userMap);
     }
 
     /**

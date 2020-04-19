@@ -32,6 +32,11 @@ public class WorkDayController {
     private WorkDayService  workDayService;
 
 
+    /**
+     * 医生工作日
+     * @param getWorkDayReq
+     * @return
+     */
     @RequestMapping(value = "/getWorkDay", method = RequestMethod.POST)
     @ResponseBody
     public Result getWorkDay(@RequestBody @Validated GetWorkDayReq getWorkDayReq) {

@@ -13,4 +13,7 @@
     <result column="request" jdbcType="VARCHAR" property="request" />
     <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
+  <select id="getApply" resultType="com.aokai.hospital.po.Apply">
+    select * from apply where doctor_id = #{doctorId}
+  </select>
 </mapper>

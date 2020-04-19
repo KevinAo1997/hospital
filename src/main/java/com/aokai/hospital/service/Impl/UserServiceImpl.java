@@ -16,6 +16,7 @@ import com.aokai.hospital.utils.MD5Util;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,27 +53,15 @@ public class UserServiceImpl implements UserService {
         // 管理员
         if (UserType.ADMIN.equals(userType)) {
             Admin admin = adminMapper.checkAdmin(username, password);
-            if (admin == null) {
-                return null;
-            }
-            user.setUsername(admin.getName());
-            user.setPassword(admin.getPassword());
+            BeanUtils.copyProperties(admin, user);
             // 患者
         } else if (UserType.PATIENT.equals(userType)) {
             Patient patient = patientMapper.checkPatient(username, password);
-            if (patient == null) {
-                return null;
-            }
-            user.setUsername(patient.getUsername());
-            user.setPassword(patient.getPassword());
+            BeanUtils.copyProperties(patient, user);
             // 医生
         } else {
             Doctor doctor = doctorMapper.checkDoctor(username, password);
-            if (doctor == null) {
-                return null;
-            }
-            user.setUsername(doctor.getUsername());
-            user.setPassword(doctor.getPassword());
+            BeanUtils.copyProperties(doctor, user);
         }
         return user;
     }

@@ -44,7 +44,7 @@ public class DoctorController {
     @RequestMapping(value = "/searchDoctor", method = RequestMethod.POST)
     @ResponseBody
     public Result searchDoctor(@RequestBody @Validated SearchDoctorNameReq searchDoctorNameReq) {
-        // 获取推荐医生信息
+        // 搜索医生信息
         List<Doctor> doctor = doctorService.searchDoctor(searchDoctorNameReq);
 
         return new SuccessResult<>(doctor);
@@ -53,7 +53,7 @@ public class DoctorController {
     @RequestMapping(value = "/getDoctor", method = RequestMethod.POST)
     @ResponseBody
     public Result getDoctor(@RequestBody @Validated GetDoctorReq getDoctorReq) {
-        // 获取推荐医生信息
+        // 获取医生信息
         Doctor doctor = doctorService.getDoctor(getDoctorReq.getDoctorId());
 
         return new SuccessResult<>(doctor);
