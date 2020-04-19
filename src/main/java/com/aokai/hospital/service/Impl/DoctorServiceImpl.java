@@ -7,10 +7,13 @@ import com.aokai.hospital.model.qo.SearchDoctorNameReq;
 import com.aokai.hospital.model.vo.RecommendDoctorResp;
 import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.service.DoctorService;
+import com.aokai.hospital.utils.BeanUtil;
+import com.github.pagehelper.PageInfo;
 import java.util.LinkedList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,27 +34,21 @@ public class DoctorServiceImpl implements DoctorService {
     private OfficeMapper officeMapper;
 
     @Override
-    public RecommendDoctorResp getRecommendDoctor() {
-        RecommendDoctorResp recommendDoctorResp = new RecommendDoctorResp();
-        List<DoctorInfo> doctorInfoList = new LinkedList<>();
+    public PageInfo<DoctorInfo> getRecommendDoctor() {
+        List<DoctorInfo> doctorInfoList;
         // 获取医生信息
         List<Doctor> doctorList = doctorMapper.selectAll();
         if (CollectionUtils.isEmpty(doctorList)) {
             return null;
         }
-        // 遍历
-        for (Doctor doctor : doctorList) {
-            DoctorInfo doctorInfo = new DoctorInfo();
-            doctorInfo.setDoctorCareer(doctor.getCareer());
-            doctorInfo.setDoctorName(doctor.getName());
-            doctorInfo.setDoctorOffice(doctor.getOfficeName());
-            doctorInfo.setDoctorDesc(doctor.getDescription());
-            doctorInfo.setPicPath(doctor.getPicpath());
+        PageInfo<Doctor> doctorPageInfo = new PageInfo<>(doctorList);
+        doctorInfoList = BeanUtil.copyPropertiesByFastJson(doctorPageInfo.getList(), DoctorInfo.class);
 
-            doctorInfoList.add(doctorInfo);
-        }
-        recommendDoctorResp.setDoctorInfoList(doctorInfoList);
-        return recommendDoctorResp;
+        PageInfo<DoctorInfo> doctorInfoPageInfo = new PageInfo<>();
+        BeanUtils.copyProperties(doctorPageInfo, doctorInfoPageInfo);
+        doctorInfoPageInfo.setList(doctorInfoList);
+
+        return doctorInfoPageInfo;
     }
 
     @Override

@@ -12,7 +12,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class SearchDoctorNameReq implements Serializable {
+public class SearchDoctorNameReq extends PageReq implements Serializable {
 
     private static final long serialVersionUID = -2771348642650195559L;
 

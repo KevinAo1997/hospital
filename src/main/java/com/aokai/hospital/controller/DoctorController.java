@@ -1,12 +1,16 @@
 package com.aokai.hospital.controller;
 
+import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.qo.GetDoctorReq;
+import com.aokai.hospital.model.qo.PageReq;
 import com.aokai.hospital.model.qo.SearchDoctorNameReq;
 import com.aokai.hospital.model.vo.RecommendDoctorResp;
 import com.aokai.hospital.model.vo.result.Result;
 import com.aokai.hospital.model.vo.result.SuccessResult;
 import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.service.DoctorService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -35,19 +39,28 @@ public class DoctorController {
      */
     @RequestMapping(value = "/getRecommendDoctor", method = RequestMethod.POST)
     @ResponseBody
-    public Result getRecommendDoctor() {
+    public Result getRecommendDoctor(@RequestBody @Validated PageReq pageReq) {
+        // 分页获取
+        int pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
+        int pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
         // 获取推荐医生信息
-        RecommendDoctorResp recommendDoctorResp = doctorService.getRecommendDoctor();
-        return new SuccessResult<>(recommendDoctorResp);
+        PageInfo<DoctorInfo> doctorInfoPageInfo = doctorService.getRecommendDoctor();
+
+        return new SuccessResult<>(doctorInfoPageInfo);
     }
 
     @RequestMapping(value = "/searchDoctor", method = RequestMethod.POST)
     @ResponseBody
     public Result searchDoctor(@RequestBody @Validated SearchDoctorNameReq searchDoctorNameReq) {
+        // 分页获取
+        int pageNum = searchDoctorNameReq.getPageNum() == null ? 1 : searchDoctorNameReq.getPageNum();
+        int pageSize = searchDoctorNameReq.getPageSize() == null ? 10 : searchDoctorNameReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
         // 搜索医生信息
-        List<Doctor> doctor = doctorService.searchDoctor(searchDoctorNameReq);
-
-        return new SuccessResult<>(doctor);
+        List<Doctor> doctorList = doctorService.searchDoctor(searchDoctorNameReq);
+        PageInfo<Doctor> doctorPageInfo = new PageInfo<>(doctorList);
+        return new SuccessResult<>(doctorPageInfo);
     }
 
     /**

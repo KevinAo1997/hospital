@@ -10,10 +10,13 @@ import com.aokai.hospital.model.vo.OfficeResp;
 import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.po.Office;
 import com.aokai.hospital.service.OfficeService;
+import com.aokai.hospital.utils.BeanUtil;
+import com.github.pagehelper.PageInfo;
 import java.util.LinkedList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,50 +38,37 @@ public class OfficeServiceImpl implements OfficeService {
 
 
     @Override
-    public OfficeResp getOfficeList() {
-        OfficeResp officeResp = new OfficeResp();
-        List<OfficeInfo> officeInfoList = new LinkedList<>();
+    public PageInfo<OfficeInfo> getOfficeList() {
+        List<OfficeInfo> officeInfoList;
         // 获取科室信息
         List<Office> officeList = officeMapper.selectAll();
         if (CollectionUtils.isEmpty(officeList)) {
             return null;
         }
-        // 遍历
-        for (Office office : officeList) {
-            OfficeInfo officeInfo = new OfficeInfo();
-            officeInfo.setOfficeName(office.getOfficeName());
-            officeInfo.setDoctorNum(office.getDoctorNum());
+        PageInfo<Office> officePageInfo = new PageInfo<>(officeList);
+        officeInfoList = BeanUtil.copyPropertiesByFastJson(officePageInfo.getList(), OfficeInfo.class);
 
-            officeInfoList.add(officeInfo);
-        }
-        officeResp.setOfficeInfoList(officeInfoList);
-        return officeResp;
+        PageInfo<OfficeInfo> officeInfoPageInfo = new PageInfo<>();
+        BeanUtils.copyProperties(officePageInfo, officeInfoPageInfo);
+        officeInfoPageInfo.setList(officeInfoList);
+        return officeInfoPageInfo;
     }
 
     @Override
-    public OfficeDetailResp getOfficeDetailList(OfficeDetailReq officeDetailReq) {
-        OfficeDetailResp officeDetailResp = new OfficeDetailResp();
-        List<DoctorInfo> doctorInfoList = new LinkedList<>();
+    public PageInfo<DoctorInfo> getOfficeDetailList(OfficeDetailReq officeDetailReq) {
+        List<DoctorInfo> doctorInfoList;
         String officeName = officeDetailReq.getOfficeName();
         // 根据科室名称获取医生信息
         List<Doctor> doctorList = doctorMapper.getDoctorByOfficeName(officeName);
         if (CollectionUtils.isEmpty(doctorList)) {
             return null;
         }
-        // 遍历
-        for (Doctor doctor : doctorList) {
-            DoctorInfo doctorInfo = new DoctorInfo();
-            doctorInfo.setDoctorCareer(doctor.getCareer());
-            doctorInfo.setDoctorName(doctor.getName());
-            doctorInfo.setDoctorOffice(doctor.getOfficeName());
-            doctorInfo.setDoctorDesc(doctor.getDescription());
-            doctorInfo.setPicPath(doctor.getPicpath());
-            doctorInfo.setFee(doctor.getFee());
-            doctorInfo.setSex(doctor.getSex());
+        PageInfo<Doctor> doctorPageInfo = new PageInfo<>(doctorList);
+        doctorInfoList = BeanUtil.copyPropertiesByFastJson(doctorPageInfo.getList(), DoctorInfo.class);
 
-            doctorInfoList.add(doctorInfo);
-        }
-        officeDetailResp.setDoctorInfoList(doctorInfoList);
-        return officeDetailResp;
+        PageInfo<DoctorInfo> doctorInfoPageInfo = new PageInfo<>();
+        BeanUtils.copyProperties(doctorPageInfo, doctorInfoPageInfo);
+        doctorInfoPageInfo.setList(doctorInfoList);
+        return doctorInfoPageInfo;
     }
 }

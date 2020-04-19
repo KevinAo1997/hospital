@@ -1,8 +1,10 @@
 package com.aokai.hospital.service;
 
+import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.qo.SearchDoctorNameReq;
 import com.aokai.hospital.model.vo.RecommendDoctorResp;
 import com.aokai.hospital.po.Doctor;
+import com.github.pagehelper.PageInfo;
 import java.util.List;
 
 /**
@@ -17,7 +19,7 @@ public interface DoctorService {
      * 获取推荐医生信息
      * @return
      */
-    RecommendDoctorResp getRecommendDoctor();
+    PageInfo<DoctorInfo> getRecommendDoctor();
 
     /**
      * 搜索医生名字

@@ -13,7 +13,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class OfficeDetailReq implements Serializable {
+public class OfficeDetailReq extends PageReq implements Serializable {
 
     private static final long serialVersionUID = -2836498953989730065L;
 
