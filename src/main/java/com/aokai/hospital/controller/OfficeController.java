@@ -4,13 +4,16 @@ import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.dto.OfficeInfo;
 import com.aokai.hospital.model.qo.OfficeDetailReq;
 import com.aokai.hospital.model.qo.PageReq;
+import com.aokai.hospital.model.qo.SearchOfficeReq;
 import com.aokai.hospital.model.vo.OfficeDetailResp;
 import com.aokai.hospital.model.vo.OfficeResp;
 import com.aokai.hospital.model.vo.result.Result;
 import com.aokai.hospital.model.vo.result.SuccessResult;
+import com.aokai.hospital.po.Office;
 import com.aokai.hospital.service.OfficeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -64,6 +67,24 @@ public class OfficeController {
         PageInfo<DoctorInfo> doctorInfoPageInfo = officeService.getOfficeDetailList(officeDetailReq);
 
         return new SuccessResult<>(doctorInfoPageInfo);
+    }
+
+    /**
+     * 搜索科室
+     * @return
+     */
+    @RequestMapping(value = "/searchOffice", method = RequestMethod.POST)
+    @ResponseBody
+    public Result searchOffice(@RequestBody @Validated SearchOfficeReq searchOfficeReq) {
+        // 分页获取
+        int pageNum = searchOfficeReq.getPageNum() == null ? 1 : searchOfficeReq.getPageNum();
+        int pageSize = searchOfficeReq.getPageSize() == null ? 10 : searchOfficeReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
+        // 获取科室列表
+        List<Office> officeList = officeService.searchOffice(searchOfficeReq);
+        PageInfo<Office> officeInfoPageInfo = new PageInfo<>(officeList);
+
+        return new SuccessResult<>(officeInfoPageInfo);
     }
 
 

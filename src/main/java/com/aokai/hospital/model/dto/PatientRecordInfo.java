@@ -1,5 +1,6 @@
 package com.aokai.hospital.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import javax.persistence.Column;
@@ -57,6 +58,7 @@ public class PatientRecordInfo implements Serializable {
     /**
      * 预约记录的时间
      */
+    @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private LocalDateTime recordTime;
 
     /**

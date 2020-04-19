@@ -3,9 +3,10 @@ package com.aokai.hospital.service;
 import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.dto.OfficeInfo;
 import com.aokai.hospital.model.qo.OfficeDetailReq;
-import com.aokai.hospital.model.vo.OfficeDetailResp;
-import com.aokai.hospital.model.vo.OfficeResp;
+import com.aokai.hospital.model.qo.SearchOfficeReq;
+import com.aokai.hospital.po.Office;
 import com.github.pagehelper.PageInfo;
+import java.util.List;
 
 /**
  * Description :   .
@@ -27,4 +28,11 @@ public interface OfficeService {
      * @return
      */
     PageInfo<DoctorInfo> getOfficeDetailList(OfficeDetailReq officeDetailReq);
+
+    /**
+     * 搜索科室
+     * @param searchOfficeReq
+     * @return
+     */
+    List<Office> searchOffice(SearchOfficeReq searchOfficeReq);
 }

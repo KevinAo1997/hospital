@@ -50,6 +50,11 @@ public class DoctorController {
         return new SuccessResult<>(doctorInfoPageInfo);
     }
 
+    /**
+     * 搜索医生
+     * @param searchDoctorNameReq
+     * @return
+     */
     @RequestMapping(value = "/searchDoctor", method = RequestMethod.POST)
     @ResponseBody
     public Result searchDoctor(@RequestBody @Validated SearchDoctorNameReq searchDoctorNameReq) {

@@ -9,4 +9,8 @@
     <result column="office_name" jdbcType="VARCHAR" property="officeName" />
     <result column="doctor_num" jdbcType="INTEGER" property="doctorNum" />
   </resultMap>
+  <select id="searchOffice" resultType="com.aokai.hospital.po.Office">
+    select id, office_name AS officeName, doctor_num AS doctorNum from office
+    where office_name like #{officeName}
+  </select>
 </mapper>

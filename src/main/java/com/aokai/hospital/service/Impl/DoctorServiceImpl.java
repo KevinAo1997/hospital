@@ -54,7 +54,7 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public List<Doctor> searchDoctor(SearchDoctorNameReq searchDoctorNameReq) {
-        String doctorName = "%" + searchDoctorNameReq.getDocotrName();
+        String doctorName = "%" + searchDoctorNameReq.getDocotrName() + "%";
         // 搜索医生
         List<Doctor> doctorList = doctorMapper.searchDoctor(doctorName);
         return doctorList;

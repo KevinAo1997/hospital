@@ -5,14 +5,12 @@ import com.aokai.hospital.dao.OfficeMapper;
 import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.dto.OfficeInfo;
 import com.aokai.hospital.model.qo.OfficeDetailReq;
-import com.aokai.hospital.model.vo.OfficeDetailResp;
-import com.aokai.hospital.model.vo.OfficeResp;
+import com.aokai.hospital.model.qo.SearchOfficeReq;
 import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.po.Office;
 import com.aokai.hospital.service.OfficeService;
 import com.aokai.hospital.utils.BeanUtil;
 import com.github.pagehelper.PageInfo;
-import java.util.LinkedList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
@@ -70,5 +68,13 @@ public class OfficeServiceImpl implements OfficeService {
         BeanUtils.copyProperties(doctorPageInfo, doctorInfoPageInfo);
         doctorInfoPageInfo.setList(doctorInfoList);
         return doctorInfoPageInfo;
+    }
+
+    @Override
+    public List<Office> searchOffice(SearchOfficeReq searchOfficeReq) {
+        String officeName = "%" + searchOfficeReq.getOfficeName() + "%";
+        // 搜索科室
+        List<Office> officeList = officeMapper.searchOffice(officeName);
+        return officeList;
     }
 }
