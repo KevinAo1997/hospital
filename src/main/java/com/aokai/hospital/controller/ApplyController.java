@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date : Created in 2020/4/19 18:01
  */
 @RestController
-@RequestMapping(value = "apply")
+@RequestMapping(value = "/apply")
 public class ApplyController {
 
     @Autowired

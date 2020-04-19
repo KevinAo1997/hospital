@@ -2,6 +2,7 @@ package com.aokai.hospital.model.dto;
 
 import java.io.Serializable;
 import javax.persistence.Column;
+import javax.persistence.Id;
 import lombok.Data;
 import lombok.ToString;
 
@@ -16,6 +17,11 @@ import lombok.ToString;
 public class DoctorInfo implements Serializable {
 
     private static final long serialVersionUID = -506954350199885357L;
+
+    /**
+     * 医生主键ID
+     */
+    private Integer id;
 
     /**
      * 医生名称
