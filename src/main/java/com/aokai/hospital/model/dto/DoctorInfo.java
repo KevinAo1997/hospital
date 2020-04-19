@@ -1,6 +1,7 @@
 package com.aokai.hospital.model.dto;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import lombok.Data;
 import lombok.ToString;
 
@@ -19,7 +20,7 @@ public class DoctorInfo implements Serializable {
     /**
      * 医生名称
      */
-    private String doctorName;
+    private String name;
 
     /**
      * 医生性别
@@ -27,27 +28,32 @@ public class DoctorInfo implements Serializable {
     private String sex;
 
     /**
+     * 年龄
+     */
+    private Byte age;
+
+    /**
      * 医生出诊费
      */
     private Integer fee;
 
     /**
-     * 医生科室
+     * 科室名称
      */
-    private String doctorOffice;
+    private String officeName;
 
     /**
-     * 医生职位
+     * 职位
      */
-    private String doctorCareer;
+    private String career;
 
     /**
-     * 医生描述
+     * 介绍
      */
-    private String doctorDesc;
+    private String description;
 
     /**
-     * 医生头像
+     * 头像
      */
-    private String picPath;
+    private String picpath;
 }

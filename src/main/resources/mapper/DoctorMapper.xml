@@ -17,13 +17,20 @@
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="picpath" jdbcType="VARCHAR" property="picpath" />
   </resultMap>
+
+  <sql id="Base_Column_List">
+    username, password, name, fee, sex, age, office_name AS officeName, career, description, picpath
+  </sql>
   <select id="checkDoctor" resultType="com.aokai.hospital.po.Doctor">
-    select * from doctor where username = #{username} and password = #{password}
+    select <include refid="Base_Column_List"/>
+    from doctor where username = #{username} and password = #{password}
   </select>
   <select id="getDoctorByOfficeName" resultType="com.aokai.hospital.po.Doctor">
-    select * from doctor where office_name = #{officeName}
+   select <include refid="Base_Column_List"/>
+   from doctor where office_name = #{officeName}
   </select>
   <select id="searchDoctor" resultType="com.aokai.hospital.po.Doctor">
-    select * from doctor where name like #{docotrName}
+    select <include refid="Base_Column_List"/>
+    from doctor where name like #{docotrName}
   </select>
 </mapper>

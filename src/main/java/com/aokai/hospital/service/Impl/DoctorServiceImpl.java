@@ -8,6 +8,7 @@ import com.aokai.hospital.model.vo.RecommendDoctorResp;
 import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.service.DoctorService;
 import com.aokai.hospital.utils.BeanUtil;
+import com.aokai.hospital.utils.MD5Util;
 import com.github.pagehelper.PageInfo;
 import java.util.LinkedList;
 import java.util.List;
