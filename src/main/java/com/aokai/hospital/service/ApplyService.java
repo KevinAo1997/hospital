@@ -49,4 +49,11 @@ public interface ApplyService {
      * @return
      */
     Boolean updateApply(UpdateApplyReq updateApplyReq);
+
+    /**
+     * 检查是否已经申请
+     * @param insertApplyReq
+     * @return
+     */
+    Boolean checkApply(InsertApplyReq insertApplyReq);
 }

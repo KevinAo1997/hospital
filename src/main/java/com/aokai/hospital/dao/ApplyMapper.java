@@ -15,4 +15,12 @@ public interface ApplyMapper extends Mapper<Apply> {
      * @return
      */
     List<Apply> getApply(@Param("doctorId") Integer doctorId);
+
+    /**
+     * 检查是否已经申请
+     * @param doctorId
+     * @param workdayId
+     * @return
+     */
+    Apply checkApply(@Param("doctorId") Integer doctorId, @Param("workdayId") Integer workdayId);
 }

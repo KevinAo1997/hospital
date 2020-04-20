@@ -1,5 +1,6 @@
 package com.aokai.hospital.controller;
 
+import com.aokai.hospital.enums.ApplicationEnum;
 import com.aokai.hospital.model.dto.ApplyInfo;
 import com.aokai.hospital.model.qo.DeleteApplyReq;
 import com.aokai.hospital.model.qo.GetApplyReq;
@@ -63,6 +64,11 @@ public class ApplyController {
     @RequestMapping(value = "/insertApply", method = RequestMethod.POST)
     @ResponseBody
     public Result insertApply(@RequestBody @Validated InsertApplyReq insertApplyReq) {
+        // 检查是否已经申请
+        Boolean checkApply = applyService.checkApply(insertApplyReq);
+        if (checkApply) {
+            return new FailResult(ApplicationEnum.APPLY_IS_EXIST);
+        }
         // 申请工作日
         Boolean insertAppy = applyService.insertApply(insertApplyReq);
         if (insertAppy) {

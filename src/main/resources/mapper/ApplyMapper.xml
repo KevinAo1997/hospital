@@ -21,4 +21,8 @@
     select<include refid="Base_Column_List"/>
     from apply where doctor_id = #{doctorId}
   </select>
+  <select id="checkApply" resultType="com.aokai.hospital.po.Apply">
+    select<include refid="Base_Column_List"/>
+    from apply where doctor_id = #{doctorId} and workday_id = #{workdayId}
+  </select>
 </mapper>

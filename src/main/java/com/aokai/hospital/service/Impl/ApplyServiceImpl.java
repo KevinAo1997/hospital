@@ -122,4 +122,11 @@ public class ApplyServiceImpl implements ApplyService {
         Integer update = applyMapper.updateByPrimaryKeySelective(apply);
         return update > 0;
     }
+
+    @Override
+    public Boolean checkApply(InsertApplyReq insertApplyReq) {
+        // 检查是否已经申请
+        Apply apply = applyMapper.checkApply(insertApplyReq.getDoctorId(), insertApplyReq.getWorkdayId());
+        return apply != null;
+    }
 }
