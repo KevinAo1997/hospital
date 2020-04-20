@@ -22,4 +22,15 @@ public interface RecordMapper extends Mapper<Record> {
      * @return
      */
     List<Record> getRecordByDoctorId(@Param("doctorId") Integer doctorId);
+
+    /**
+     * 检查是否存在
+     * @param doctorId
+     * @param patientId
+     * @param workTime
+     * @param period
+     * @return
+     */
+    Record checkRecord(
+            @Param("doctorId") Integer doctorId, @Param("patientId") Integer patientId, @Param("workTime") String workTime, @Param("period") String period);
 }

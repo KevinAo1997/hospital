@@ -1,5 +1,6 @@
 package com.aokai.hospital.controller;
 
+import com.aokai.hospital.enums.ApplicationEnum;
 import com.aokai.hospital.model.dto.DoctorRecordInfo;
 import com.aokai.hospital.model.dto.PatientRecordInfo;
 import com.aokai.hospital.model.qo.GetDoctorRecordListReq;
@@ -46,6 +47,11 @@ public class RecordController {
     @RequestMapping(value = "/insertRecord", method = RequestMethod.POST)
     @ResponseBody
     public Result insertRecord(@RequestBody @Validated InsertRecordReq insertRecordReq) {
+        // 检查是否存在
+        Boolean checkRecord = recordServicec.checkRecord(insertRecordReq);
+        if (checkRecord) {
+            return new FailResult(ApplicationEnum.RECORD_IS_EXIST);
+        }
         // 患者新增一条预约记录
         Boolean insertRecord = recordServicec.insertRecord(insertRecordReq);
         if(insertRecord) {

@@ -1,6 +1,7 @@
 package com.aokai.hospital.service.Impl;
 
 import com.aokai.hospital.dao.WorkdayMapper;
+import com.aokai.hospital.model.qo.UpdateWorkdayReq;
 import com.aokai.hospital.po.Workday;
 import com.aokai.hospital.service.WorkDayService;
 import java.util.List;
@@ -33,5 +34,16 @@ public class WorkDayServiceImpl implements WorkDayService {
         // 分页获取所有医生工作日信息
         List<Workday> workdayList = workdayMapper.selectAll();
         return workdayList;
+    }
+
+    @Override
+    public Boolean updateWorkday(UpdateWorkdayReq updateWorkdayReq) {
+        // 管理员分配医生工作日是否出诊
+        Workday workday = new Workday();
+        workday.setId(updateWorkdayReq.getWorkdayId());
+        workday.setStatus(updateWorkdayReq.getStatus());
+
+        Integer update = workdayMapper.updateByPrimaryKeySelective(workday);
+        return update > 0;
     }
 }

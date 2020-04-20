@@ -34,7 +34,9 @@ public enum ApplicationEnum {
     TOKEN_INVALID("0", "token失效"),
 
 
-    FAIL("0","业务执行失败");
+    FAIL("0","业务执行失败"),
+
+    RECORD_IS_EXIST("0","已经预约");
 
 
     /**

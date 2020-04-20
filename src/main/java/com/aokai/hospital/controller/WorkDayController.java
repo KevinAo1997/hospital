@@ -1,11 +1,10 @@
 package com.aokai.hospital.controller;
 
-import com.aokai.hospital.model.qo.GetDoctorReq;
 import com.aokai.hospital.model.qo.GetWorkDayReq;
-import com.aokai.hospital.model.qo.PageReq;
+import com.aokai.hospital.model.qo.UpdateWorkdayReq;
+import com.aokai.hospital.model.vo.result.FailResult;
 import com.aokai.hospital.model.vo.result.Result;
 import com.aokai.hospital.model.vo.result.SuccessResult;
-import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.po.Workday;
 import com.aokai.hospital.service.WorkDayService;
 import com.github.pagehelper.PageHelper;
@@ -53,39 +52,41 @@ public class WorkDayController {
         return new SuccessResult<>(workdayPageInfo);
     }
 
-    /**
-     * 所有医生工作日
-     * @param pageReq
-     * @return
-     */
-    @RequestMapping(value = "/getAllWorkDay", method = RequestMethod.POST)
-    @ResponseBody
-    public Result getAllWorkDay(@RequestBody @Validated PageReq pageReq) {
-        // 分页获取
-        int pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
-        int pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
-        PageHelper.startPage(pageNum, pageSize);
-        // 分页获取所有医生工作日信息
-        List<Workday> workdayList = workDayService.getAllWorkDay();
-        PageInfo<Workday> workdayPageInfo = new PageInfo<>(workdayList);
-
-        return new SuccessResult<>(workdayPageInfo);
-    }
-
-
 //    /**
-//     * 管理员分配医生工作日是否出诊
+//     * 所有医生工作日
 //     * @param pageReq
 //     * @return
 //     */
 //    @RequestMapping(value = "/getAllWorkDay", method = RequestMethod.POST)
 //    @ResponseBody
 //    public Result getAllWorkDay(@RequestBody @Validated PageReq pageReq) {
-//        // 管理员分配医生工作日是否出诊
+//        // 分页获取
+//        int pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
+//        int pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
+//        PageHelper.startPage(pageNum, pageSize);
+//        // 分页获取所有医生工作日信息
+//        List<Workday> workdayList = workDayService.getAllWorkDay();
+//        PageInfo<Workday> workdayPageInfo = new PageInfo<>(workdayList);
 //
-//
-//        return new SuccessResult<>();
+//        return new SuccessResult<>(workdayPageInfo);
 //    }
+
+
+    /**
+     * 管理员分配医生工作日是否出诊
+     * @param updateWorkdayReq
+     * @return
+     */
+    @RequestMapping(value = "/updateWorkday", method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateWorkday(@RequestBody @Validated UpdateWorkdayReq updateWorkdayReq) {
+        // 管理员分配医生工作日是否出诊
+        Boolean update = workDayService.updateWorkday(updateWorkdayReq);
+        if (update) {
+            return new SuccessResult<>();
+        }
+        return new FailResult<>();
+    }
 
 
 }

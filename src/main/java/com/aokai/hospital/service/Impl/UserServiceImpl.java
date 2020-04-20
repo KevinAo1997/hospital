@@ -13,6 +13,7 @@ import com.aokai.hospital.po.Doctor;
 import com.aokai.hospital.po.Patient;
 import com.aokai.hospital.service.UserService;
 import com.aokai.hospital.utils.MD5Util;
+import com.github.pagehelper.PageInfo;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
@@ -110,5 +111,11 @@ public class UserServiceImpl implements UserService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public PageInfo<Patient> getPatientList() {
+        // 获取推荐患者信息
+        return null;
     }
 }

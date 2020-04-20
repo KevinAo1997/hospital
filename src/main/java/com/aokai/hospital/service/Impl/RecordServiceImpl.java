@@ -68,7 +68,9 @@ public class RecordServiceImpl implements RecordService {
             if (doctor == null) {
                 continue;
             }
-            Optional<PatientRecordInfo> patientRecordInfoOptional = patientRecordInfoList.stream().filter(o -> o.getDoctorId().equals(doctor.getId())).findAny();
+            Optional<PatientRecordInfo> patientRecordInfoOptional = patientRecordInfoList.stream()
+                    .filter(o -> o.getWorkTime().equals(record.getWorkTime()) && o.getPeriod()
+                            .equals(record.getPeriod())).findAny();
             if (patientRecordInfoOptional.isPresent()) {
                 PatientRecordInfo patientRecordInfo = patientRecordInfoOptional.get();
                 patientRecordInfo.setDoctorName(doctor.getName());
@@ -109,5 +111,12 @@ public class RecordServiceImpl implements RecordService {
 
         Integer update = recordMapper.updateByPrimaryKeySelective(record);
         return update > 0;
+    }
+
+    @Override
+    public Boolean checkRecord(InsertRecordReq insertRecordReq) {
+        // 检查是否存在
+        Record record = recordMapper.checkRecord(insertRecordReq.getDoctorId(), insertRecordReq.getPatientId(), insertRecordReq.getWorkTime(), insertRecordReq.getPeriod());
+        return record != null;
     }
 }

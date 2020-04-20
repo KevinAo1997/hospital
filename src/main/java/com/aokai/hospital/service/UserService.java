@@ -4,6 +4,7 @@ import com.aokai.hospital.model.dto.User;
 import com.aokai.hospital.model.qo.RegisterReq;
 import com.aokai.hospital.model.qo.UserReq;
 import com.aokai.hospital.po.Patient;
+import com.github.pagehelper.PageInfo;
 import java.util.List;
 import org.apache.poi.ss.formula.functions.T;
 
@@ -41,4 +42,10 @@ public interface UserService {
      * @param registerReq
      */
     Boolean insertPatient(RegisterReq registerReq);
+
+    /**
+     * 获取推荐患者信息
+     * @return
+     */
+    PageInfo<Patient> getPatientList();
 }

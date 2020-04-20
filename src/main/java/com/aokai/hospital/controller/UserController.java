@@ -1,16 +1,21 @@
 package com.aokai.hospital.controller;
 
 import com.aokai.hospital.enums.ApplicationEnum;
+import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.dto.User;
+import com.aokai.hospital.model.qo.PageReq;
 import com.aokai.hospital.model.qo.RegisterReq;
 import com.aokai.hospital.model.qo.UserReq;
 import com.aokai.hospital.model.vo.result.FailResult;
 import com.aokai.hospital.model.vo.result.Result;
 import com.aokai.hospital.model.vo.result.SuccessResult;
+import com.aokai.hospital.po.Patient;
 import com.aokai.hospital.service.UserService;
 import com.aokai.hospital.utils.MD5Util;
 import com.aokai.hospital.utils.TokenUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import java.util.HashMap;
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,6 +102,23 @@ public class UserController {
     public String test()  {
         String str  = "test通过";
         return str;
+    }
+
+    /**
+     * 获取患者信息
+     * @return
+     */
+    @RequestMapping(value = "/getPatientList", method = RequestMethod.POST)
+    @ResponseBody
+    public Result getPatientList(@RequestBody @Validated PageReq pageReq) {
+        // 分页获取
+        int pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
+        int pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
+        // 获取推荐患者信息
+        PageInfo<Patient> patientPageInfo = userService.getPatientList();
+
+        return new SuccessResult<>(patientPageInfo);
     }
 
 }

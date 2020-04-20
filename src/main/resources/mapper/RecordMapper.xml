@@ -27,4 +27,8 @@
     select<include refid="Base_Column_List"/>
     from record where doctor_id = #{doctorId}
   </select>
+  <select id="checkRecord" resultType="com.aokai.hospital.po.Record">
+    select<include refid="Base_Column_List"/>
+    from record where doctor_id = #{doctorId}, patient_id = #{patientId}, work_time = #{workTime}, period = #{period}
+  </select>
 </mapper>

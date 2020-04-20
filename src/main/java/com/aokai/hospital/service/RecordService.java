@@ -42,4 +42,11 @@ public interface RecordService {
      * @return
      */
     Boolean updateRecord(UpdateRecordReq updateRecordReq);
+
+    /**
+     * 检查是否存在
+     * @param insertRecordReq
+     * @return
+     */
+    Boolean checkRecord(InsertRecordReq insertRecordReq);
 }

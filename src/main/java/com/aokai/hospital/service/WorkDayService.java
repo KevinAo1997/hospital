@@ -1,5 +1,6 @@
 package com.aokai.hospital.service;
 
+import com.aokai.hospital.model.qo.UpdateWorkdayReq;
 import com.aokai.hospital.po.Workday;
 import java.util.List;
 
@@ -23,4 +24,11 @@ public interface WorkDayService {
      * @return
      */
     List<Workday> getAllWorkDay();
+
+    /**
+     * 管理员分配医生工作日是否出诊
+     * @param updateWorkdayReq
+     * @return
+     */
+    Boolean updateWorkday(UpdateWorkdayReq updateWorkdayReq);
 }

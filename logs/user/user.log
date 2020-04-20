@@ -470,3 +470,221 @@ java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check th
 2020-04-20 12:28:50,869 DEBUG 3868 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, doctor_id AS doctorId, work_time AS workTime , period, status from workday where doctor_id = ? LIMIT ? 
 2020-04-20 12:28:50,872 DEBUG 3868 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
 2020-04-20 12:28:50,914 DEBUG 3868 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 8
+2020-04-20 13:07:21,917 DEBUG 3868 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM office 
+2020-04-20 13:07:21,919 DEBUG 3868 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 
+2020-04-20 13:07:21,950 DEBUG 3868 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:07:21,951 DEBUG 3868 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,office_name,doctor_num FROM office LIMIT ? 
+2020-04-20 13:07:21,952 DEBUG 3868 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 10(Integer)
+2020-04-20 13:07:21,990 DEBUG 3868 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 10
+2020-04-20 13:45:16,677 INFO  3868 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-20 13:45:16,683 INFO  3868 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-20 13:45:16,699 INFO  3868 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-20 13:45:29,300 INFO  3900 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 3900 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-20 13:45:29,304 INFO  3900 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-20 13:45:30,272 WARN  3900 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-20 13:45:30,811 INFO  3900 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8002 (http)
+2020-04-20 13:45:30,821 INFO  3900 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8002"]
+2020-04-20 13:45:30,822 INFO  3900 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-20 13:45:30,822 INFO  3900 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-20 13:45:30,968 INFO  3900 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-20 13:45:30,969 INFO  3900 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1582 ms
+2020-04-20 13:45:31,942 INFO  3900 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-20 13:45:32,090 INFO  3900 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-20 13:45:32,091 INFO  3900 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-20 13:45:32,092 INFO  3900 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-20 13:45:32,093 INFO  3900 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-20 13:45:32,208 INFO  3900 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8002"]
+2020-04-20 13:45:32,249 INFO  3900 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8002 (http) with context path ''
+2020-04-20 13:45:32,256 INFO  3900 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 3.782 seconds (JVM running for 4.994)
+2020-04-20 13:45:43,821 INFO  3900 --- [http-nio-8002-exec-1] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-20 13:45:43,821 INFO  3900 --- [http-nio-8002-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-20 13:45:43,827 INFO  3900 --- [http-nio-8002-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 6 ms
+2020-04-20 13:45:44,035 INFO  3900 --- [http-nio-8002-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-20 13:45:44,579 INFO  3900 --- [http-nio-8002-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-20 13:45:44,590 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from patient where username = ? and password = ? 
+2020-04-20 13:45:44,624 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 001(String), 96e79218965eb72c92a549dd5a330112(String)
+2020-04-20 13:45:44,690 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:45:45,552 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM doctor 
+2020-04-20 13:45:45,554 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 
+2020-04-20 13:45:45,586 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:45:45,592 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor LIMIT ? 
+2020-04-20 13:45:45,593 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 10(Integer)
+2020-04-20 13:45:45,629 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 6
+2020-04-20 13:45:50,750 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM office 
+2020-04-20 13:45:50,751 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 
+2020-04-20 13:45:50,783 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:45:50,783 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,office_name,doctor_num FROM office LIMIT ? 
+2020-04-20 13:45:50,784 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 10(Integer)
+2020-04-20 13:45:50,819 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 10
+2020-04-20 13:45:52,984 DEBUG 3900 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM doctor WHERE office_name = ? 
+2020-04-20 13:45:52,985 DEBUG 3900 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 儿科泌尿专科(String)
+2020-04-20 13:45:53,030 DEBUG 3900 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:45:53,031 DEBUG 3900 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, username, password, name, fee, sex, age, office_name AS officeName, career, description, picpath from doctor where office_name = ? LIMIT ? 
+2020-04-20 13:45:53,032 DEBUG 3900 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 儿科泌尿专科(String), 10(Integer)
+2020-04-20 13:45:53,071 DEBUG 3900 --- [http-nio-8002-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 13:45:54,820 WARN  3900 --- [http-nio-8002-exec-5] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException/199 : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `java.lang.Integer` out of START_OBJECT token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.lang.Integer` out of START_OBJECT token
+ at [Source: (PushbackInputStream); line: 1, column: 39] (through reference chain: com.aokai.hospital.model.qo.GetWorkDayReq["doctorId"])]
+2020-04-20 13:45:59,802 DEBUG 3900 --- [http-nio-8002-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM doctor 
+2020-04-20 13:45:59,802 DEBUG 3900 --- [http-nio-8002-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 
+2020-04-20 13:45:59,834 DEBUG 3900 --- [http-nio-8002-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:45:59,834 DEBUG 3900 --- [http-nio-8002-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor LIMIT ? 
+2020-04-20 13:45:59,835 DEBUG 3900 --- [http-nio-8002-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 10(Integer)
+2020-04-20 13:45:59,871 DEBUG 3900 --- [http-nio-8002-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 6
+2020-04-20 13:46:01,106 DEBUG 3900 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM workday WHERE doctor_id = ? 
+2020-04-20 13:46:01,107 DEBUG 3900 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:46:01,140 DEBUG 3900 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:46:01,141 DEBUG 3900 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, doctor_id AS doctorId, work_time AS workTime , period, status from workday where doctor_id = ? LIMIT ? 
+2020-04-20 13:46:01,142 DEBUG 3900 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 13:46:01,180 DEBUG 3900 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 8
+2020-04-20 13:46:17,281 DEBUG 3900 --- [http-nio-8002-exec-8] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: INSERT INTO record ( id,patient_id,patient_name,workday_id,doctor_id,work_time,period,record_time,status ) VALUES( ?,?,?,?,?,?,?,?,? ) 
+2020-04-20 13:46:17,283 DEBUG 3900 --- [http-nio-8002-exec-8] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null, 1(Integer), 葛金燕(String), 1(Integer), 1(Integer), 2020-04-19 星期日(String), 上午(String), 2020-04-20T13:46:17.208(LocalDateTime), 2(Integer)
+2020-04-20 13:46:17,365 DEBUG 3900 --- [http-nio-8002-exec-8] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-20 13:46:35,065 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM record WHERE patient_id = ? 
+2020-04-20 13:46:35,068 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:46:35,105 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:46:35,109 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, patient_id AS patientId, patient_name AS patientName, workday_id AS workdayId, doctor_id AS doctorId, work_time AS workTime, period, record_time AS recordTime, status from record where patient_id = ? LIMIT ? 
+2020-04-20 13:46:35,111 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 13:46:35,169 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 13:47:08,349 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:47:08,351 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:47:08,422 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:47:48,046 WARN  3900 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=57s790ms530µs).
+2020-04-20 13:47:48,945 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:47:48,954 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:47:48,999 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:47:50,806 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:47:50,809 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:47:50,855 DEBUG 3900 --- [http-nio-8002-exec-10] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:48:36,072 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM record WHERE patient_id = ? 
+2020-04-20 13:48:36,073 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:48:36,104 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:48:36,105 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, patient_id AS patientId, patient_name AS patientName, workday_id AS workdayId, doctor_id AS doctorId, work_time AS workTime, period, record_time AS recordTime, status from record where patient_id = ? LIMIT ? 
+2020-04-20 13:48:36,106 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 13:48:36,141 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 13:48:36,144 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:48:36,145 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:48:36,186 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:48:36,187 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:48:36,188 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:48:36,221 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:48:36,224 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:48:36,225 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:48:36,262 DEBUG 3900 --- [http-nio-8002-exec-9] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:48:52,456 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM record WHERE patient_id = ? 
+2020-04-20 13:48:52,457 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:48:52,492 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:48:52,493 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, patient_id AS patientId, patient_name AS patientName, workday_id AS workdayId, doctor_id AS doctorId, work_time AS workTime, period, record_time AS recordTime, status from record where patient_id = ? LIMIT ? 
+2020-04-20 13:48:52,494 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 13:48:52,529 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 13:48:52,532 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:48:52,532 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:48:52,566 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:48:52,567 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:48:52,568 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:48:52,601 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:48:52,603 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:48:52,603 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:48:52,640 DEBUG 3900 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:50:25,646 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM record WHERE patient_id = ? 
+2020-04-20 13:50:25,648 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:50:25,680 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:50:25,681 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, patient_id AS patientId, patient_name AS patientName, workday_id AS workdayId, doctor_id AS doctorId, work_time AS workTime, period, record_time AS recordTime, status from record where patient_id = ? LIMIT ? 
+2020-04-20 13:50:25,682 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 13:50:25,714 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 13:50:25,716 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:50:25,717 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:50:25,754 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:50:25,755 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:50:25,756 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:50:25,791 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:50:25,792 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:50:25,793 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:50:25,827 DEBUG 3900 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:51:12,544 WARN  3900 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s367ms529µs701ns).
+2020-04-20 13:51:31,306 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM record WHERE patient_id = ? 
+2020-04-20 13:51:31,307 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:51:31,341 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:51:31,343 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, patient_id AS patientId, patient_name AS patientName, workday_id AS workdayId, doctor_id AS doctorId, work_time AS workTime, period, record_time AS recordTime, status from record where patient_id = ? LIMIT ? 
+2020-04-20 13:51:31,343 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 13:51:31,377 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 13:51:33,857 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:51:33,859 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:51:33,899 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:52:11,229 WARN  3900 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s685ms137µs).
+2020-04-20 13:52:12,451 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:52:12,453 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:52:12,498 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:53:09,302 WARN  3900 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s72ms406µs700ns).
+2020-04-20 13:53:23,906 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:53:23,908 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:53:23,945 DEBUG 3900 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:55:55,522 WARN  3900 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m46s220ms243µs899ns).
+2020-04-20 13:58:47,118 INFO  3900 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-20 13:58:47,120 INFO  3900 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-20 13:58:47,134 INFO  3900 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-20 13:58:57,187 INFO  5328 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 5328 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-20 13:58:57,192 INFO  5328 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-20 13:58:58,359 WARN  5328 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-20 13:58:58,878 INFO  5328 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8002 (http)
+2020-04-20 13:58:58,891 INFO  5328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8002"]
+2020-04-20 13:58:58,892 INFO  5328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-20 13:58:58,892 INFO  5328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-20 13:58:59,034 INFO  5328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-20 13:58:59,035 INFO  5328 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1656 ms
+2020-04-20 13:59:00,161 INFO  5328 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-20 13:59:00,406 INFO  5328 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-20 13:59:00,407 INFO  5328 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-20 13:59:00,410 INFO  5328 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-20 13:59:00,411 INFO  5328 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-20 13:59:00,604 INFO  5328 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8002"]
+2020-04-20 13:59:00,630 INFO  5328 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8002 (http) with context path ''
+2020-04-20 13:59:00,636 INFO  5328 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 4.208 seconds (JVM running for 5.721)
+2020-04-20 13:59:52,088 INFO  5328 --- [http-nio-8002-exec-1] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-20 13:59:52,089 INFO  5328 --- [http-nio-8002-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-20 13:59:52,098 INFO  5328 --- [http-nio-8002-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 9 ms
+2020-04-20 13:59:52,988 INFO  5328 --- [http-nio-8002-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-20 13:59:53,572 INFO  5328 --- [http-nio-8002-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-20 13:59:53,581 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM record WHERE patient_id = ? 
+2020-04-20 13:59:53,610 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:59:53,666 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:59:53,674 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, patient_id AS patientId, patient_name AS patientName, workday_id AS workdayId, doctor_id AS doctorId, work_time AS workTime, period, record_time AS recordTime, status from record where patient_id = ? LIMIT ? 
+2020-04-20 13:59:53,675 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 13:59:53,715 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 13:59:58,212 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:59:58,213 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:59:58,255 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:59:58,257 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:59:58,258 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:59:58,295 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 13:59:58,296 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 13:59:58,297 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 13:59:58,382 DEBUG 5328 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 14:00:28,064 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM record WHERE patient_id = ? 
+2020-04-20 14:00:28,065 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 14:00:28,098 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 14:00:28,099 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, patient_id AS patientId, patient_name AS patientName, workday_id AS workdayId, doctor_id AS doctorId, work_time AS workTime, period, record_time AS recordTime, status from record where patient_id = ? LIMIT ? 
+2020-04-20 14:00:28,100 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 14:00:28,139 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 14:00:30,410 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 14:00:30,412 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 14:00:30,452 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 14:01:34,371 WARN  5328 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m10s696ms507µs399ns).
+2020-04-20 14:01:34,419 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 14:01:34,421 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 14:01:34,455 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 14:01:34,456 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
+2020-04-20 14:01:34,457 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 14:01:34,492 DEBUG 5328 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 14:12:30,551 WARN  5328 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m56s180ms610µs401ns).
+2020-04-20 14:12:30,612 INFO  5328 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-20 14:12:30,613 INFO  5328 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-20 14:12:30,624 INFO  5328 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-20 14:12:39,573 INFO  2436 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 2436 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-20 14:12:39,581 INFO  2436 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-20 14:12:41,291 WARN  2436 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-20 14:12:41,979 INFO  2436 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8002 (http)
+2020-04-20 14:12:41,991 INFO  2436 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8002"]
+2020-04-20 14:12:41,992 INFO  2436 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-20 14:12:41,992 INFO  2436 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-20 14:12:42,129 INFO  2436 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-20 14:12:42,130 INFO  2436 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 2376 ms
