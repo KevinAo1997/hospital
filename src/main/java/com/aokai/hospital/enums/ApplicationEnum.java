@@ -29,6 +29,8 @@ public enum ApplicationEnum {
     USER_NO_EXIST("0","用户不存在"),
     PASSWORD_ERR("0","密码错误"),
 
+    OLD_PASSWORD_ERR("0","原密码错误"),
+
     REQUEST_FREQUENTLY("0","请求太过频繁"),
 
     TOKEN_INVALID("0", "token失效"),

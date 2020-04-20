@@ -5,6 +5,7 @@ import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.dto.User;
 import com.aokai.hospital.model.qo.PageReq;
 import com.aokai.hospital.model.qo.RegisterReq;
+import com.aokai.hospital.model.qo.UpdatePasswordReq;
 import com.aokai.hospital.model.qo.UserReq;
 import com.aokai.hospital.model.vo.result.FailResult;
 import com.aokai.hospital.model.vo.result.Result;
@@ -17,6 +18,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import java.util.HashMap;
+import java.util.List;
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -96,12 +98,19 @@ public class UserController {
         return new SuccessResult<>(token);
     }
 
-
-
-    @RequestMapping(value = "/test",method = RequestMethod.POST)
-    public String test()  {
-        String str  = "test通过";
-        return str;
+    /**
+     * 修改密码
+     * @return
+     */
+    @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
+    @ResponseBody
+    public Result updatePassword(@RequestBody @Validated UpdatePasswordReq updatePasswordReq) {
+        // 修改密码
+        Boolean update = userService.updatePassword(updatePasswordReq);
+        if (update) {
+            return new SuccessResult<>();
+        }
+        return new FailResult<>(ApplicationEnum.OLD_PASSWORD_ERR);
     }
 
     /**
@@ -115,9 +124,9 @@ public class UserController {
         int pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
         int pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
-        // 获取推荐患者信息
-        PageInfo<Patient> patientPageInfo = userService.getPatientList();
-
+        // 获取患者信息
+        List<Patient> patientList = userService.getPatientList();
+        PageInfo<Patient> patientPageInfo = new PageInfo<>(patientList);
         return new SuccessResult<>(patientPageInfo);
     }
 

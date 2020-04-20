@@ -52,25 +52,6 @@ public class WorkDayController {
         return new SuccessResult<>(workdayPageInfo);
     }
 
-//    /**
-//     * 所有医生工作日
-//     * @param pageReq
-//     * @return
-//     */
-//    @RequestMapping(value = "/getAllWorkDay", method = RequestMethod.POST)
-//    @ResponseBody
-//    public Result getAllWorkDay(@RequestBody @Validated PageReq pageReq) {
-//        // 分页获取
-//        int pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
-//        int pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
-//        PageHelper.startPage(pageNum, pageSize);
-//        // 分页获取所有医生工作日信息
-//        List<Workday> workdayList = workDayService.getAllWorkDay();
-//        PageInfo<Workday> workdayPageInfo = new PageInfo<>(workdayList);
-//
-//        return new SuccessResult<>(workdayPageInfo);
-//    }
-
 
     /**
      * 管理员分配医生工作日是否出诊

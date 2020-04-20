@@ -5,6 +5,7 @@ import com.aokai.hospital.dao.WorkdayMapper;
 import com.aokai.hospital.model.dto.ApplyInfo;
 import com.aokai.hospital.model.qo.DeleteApplyReq;
 import com.aokai.hospital.model.qo.InsertApplyReq;
+import com.aokai.hospital.model.qo.UpdateApplyReq;
 import com.aokai.hospital.po.Apply;
 import com.aokai.hospital.po.Workday;
 import com.aokai.hospital.service.ApplyService;
@@ -82,5 +83,22 @@ public class ApplyServiceImpl implements ApplyService {
         // 取消申请
         Integer delete = applyMapper.deleteByPrimaryKey(deleteApplyReq.getApplyId());
         return delete > 0;
+    }
+
+    @Override
+    public List<Apply> getAllApply() {
+        // 所有医生申请列表
+        List<Apply> applyList = applyMapper.selectAll();
+        return applyList;
+    }
+
+    @Override
+    public Boolean updateApply(UpdateApplyReq updateApplyReq) {
+        Apply apply = new Apply();
+        apply.setId(updateApplyReq.getApplyId());
+        apply.setStatus(updateApplyReq.getStatus());
+
+        Integer update = applyMapper.updateByPrimaryKeySelective(apply);
+        return update > 0;
     }
 }

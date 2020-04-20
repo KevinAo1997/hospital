@@ -2,6 +2,7 @@ package com.aokai.hospital.service;
 
 import com.aokai.hospital.model.dto.User;
 import com.aokai.hospital.model.qo.RegisterReq;
+import com.aokai.hospital.model.qo.UpdatePasswordReq;
 import com.aokai.hospital.model.qo.UserReq;
 import com.aokai.hospital.po.Patient;
 import com.github.pagehelper.PageInfo;
@@ -47,5 +48,12 @@ public interface UserService {
      * 获取推荐患者信息
      * @return
      */
-    PageInfo<Patient> getPatientList();
+    List<Patient> getPatientList();
+
+    /**
+     * 修改密码
+     * @param updatePasswordReq
+     * @return
+     */
+    Boolean updatePassword(UpdatePasswordReq updatePasswordReq);
 }

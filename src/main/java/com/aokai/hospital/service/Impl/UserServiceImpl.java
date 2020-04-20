@@ -7,6 +7,7 @@ import com.aokai.hospital.enums.UserTypeEnum;
 import com.aokai.hospital.enums.UserTypeEnum.UserType;
 import com.aokai.hospital.model.dto.User;
 import com.aokai.hospital.model.qo.RegisterReq;
+import com.aokai.hospital.model.qo.UpdatePasswordReq;
 import com.aokai.hospital.model.qo.UserReq;
 import com.aokai.hospital.po.Admin;
 import com.aokai.hospital.po.Doctor;
@@ -15,6 +16,7 @@ import com.aokai.hospital.service.UserService;
 import com.aokai.hospital.utils.MD5Util;
 import com.github.pagehelper.PageInfo;
 import java.util.List;
+import javax.swing.Painter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.BeanUtils;
@@ -114,8 +116,46 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public PageInfo<Patient> getPatientList() {
+    public List<Patient> getPatientList() {
         // 获取推荐患者信息
-        return null;
+        List<Patient> patientList = patientMapper.selectAll();
+        return patientList;
+    }
+
+    @Override
+    public Boolean updatePassword(UpdatePasswordReq updatePasswordReq) {
+        UserTypeEnum.UserType userType = updatePasswordReq.getUserType();
+        String oldPassword = MD5Util.string2MD5(updatePasswordReq.getOldPassword());
+        String newPassword = MD5Util.string2MD5(updatePasswordReq.getNewPassword());
+
+        // 根据用户类型去查询用户信息
+        // 管理员
+        if (UserType.ADMIN.equals(userType)) {
+            Admin admin = adminMapper.selectByPrimaryKey(updatePasswordReq.getUserId());
+            if (admin == null || ! admin.getPassword().equals(oldPassword)) {
+                return false;
+            }
+            admin.setPassword(newPassword);
+            Integer update = adminMapper.updateByPrimaryKeySelective(admin);
+            return update > 0;
+            // 患者
+        } else if (UserType.PATIENT.equals(userType)) {
+            Patient patient = patientMapper.selectByPrimaryKey(updatePasswordReq.getUserId());
+            if (patient == null || ! patient.getPassword().equals(oldPassword)) {
+                return false;
+            }
+            patient.setPassword(newPassword);
+            Integer update = patientMapper.updateByPrimaryKeySelective(patient);
+            return update > 0;
+
+        }
+        // 医生
+        Doctor doctor = doctorMapper.selectByPrimaryKey(updatePasswordReq.getUserId());
+        if (doctor == null || ! doctor.getPassword().equals(oldPassword)) {
+                return false;
+        }
+        doctor.setPassword(newPassword);
+        Integer update = doctorMapper.updateByPrimaryKeySelective(doctor);
+        return update > 0;
     }
 }

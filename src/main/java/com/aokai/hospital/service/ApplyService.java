@@ -3,7 +3,10 @@ package com.aokai.hospital.service;
 import com.aokai.hospital.model.dto.ApplyInfo;
 import com.aokai.hospital.model.qo.DeleteApplyReq;
 import com.aokai.hospital.model.qo.InsertApplyReq;
+import com.aokai.hospital.model.qo.UpdateApplyReq;
+import com.aokai.hospital.po.Apply;
 import com.github.pagehelper.PageInfo;
+import java.util.List;
 
 /**
  * Description :   .
@@ -33,4 +36,17 @@ public interface ApplyService {
      * @return
      */
     Boolean deleteApply(DeleteApplyReq deleteApplyReq);
+
+    /**
+     * 所有医生申请列表
+     * @return
+     */
+    List<Apply> getAllApply();
+
+    /**
+     * 医生同意或者拒绝医生申请
+     * @param updateApplyReq
+     * @return
+     */
+    Boolean updateApply(UpdateApplyReq updateApplyReq);
 }
