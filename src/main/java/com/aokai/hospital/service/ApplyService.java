@@ -41,7 +41,7 @@ public interface ApplyService {
      * 所有医生申请列表
      * @return
      */
-    List<Apply> getAllApply();
+    PageInfo<ApplyInfo> getAllApply();
 
     /**
      * 医生同意或者拒绝医生申请

@@ -100,15 +100,14 @@ public class ApplyController {
         int pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
         // 分页获取所有医生申请列表
-        List<Apply> applyList = applyService.getAllApply();
-        PageInfo<Apply> applyPageInfo = new PageInfo<>(applyList);
+        PageInfo<ApplyInfo> applyInfoPageInfo = applyService.getAllApply();
 
-        return new SuccessResult<>(applyPageInfo);
+        return new SuccessResult<>(applyInfoPageInfo);
     }
 
 
     /**
-     * 医生同意或者拒绝医生申请
+     * 管理员同意或者拒绝医生申请
      * @param updateApplyReq
      * @return
      */

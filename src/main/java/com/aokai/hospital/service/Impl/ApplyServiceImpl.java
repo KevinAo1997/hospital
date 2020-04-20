@@ -86,10 +86,31 @@ public class ApplyServiceImpl implements ApplyService {
     }
 
     @Override
-    public List<Apply> getAllApply() {
+    public PageInfo<ApplyInfo> getAllApply() {
+        List<ApplyInfo> applyInfoList;
         // 所有医生申请列表
         List<Apply> applyList = applyMapper.selectAll();
-        return applyList;
+        PageInfo<Apply> applyPageInfo = new PageInfo<>(applyList);
+
+        // 复制
+        applyInfoList = BeanUtil.copyPropertiesByFastJson(applyPageInfo.getList(), ApplyInfo.class);
+        for (Apply apply : applyList) {
+            Workday workday = workdayMapper.selectByPrimaryKey(apply.getWorkdayId());
+            if (workday == null) {
+                continue;
+            }
+            Optional<ApplyInfo> optionalApplyInfo = applyInfoList.stream().filter(o->o.getWorkdayId().equals(workday.getId())).findAny();
+            if (optionalApplyInfo.isPresent()) {
+                ApplyInfo applyInfo = optionalApplyInfo.get();
+                applyInfo.setWorkTime(workday.getWorkTime());
+                applyInfo.setPeriod(workday.getPeriod());
+            }
+        }
+        PageInfo<ApplyInfo> applyInfoPageInfo = new PageInfo<>();
+        BeanUtils.copyProperties(applyPageInfo, applyInfoPageInfo);
+        applyInfoPageInfo.setList(applyInfoList);
+
+        return applyInfoPageInfo;
     }
 
     @Override
