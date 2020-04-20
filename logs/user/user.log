@@ -1581,3 +1581,61 @@ Caused by: java.sql.SQLException: HikariDataSource HikariDataSource (HikariPool-
 2020-04-20 20:47:19,021 INFO  17088 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
 2020-04-20 20:47:19,022 INFO  17088 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1861 ms
 2020-04-20 20:47:20,798 INFO  17088 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-20 20:47:20,962 INFO  17088 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-20 20:47:20,963 INFO  17088 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-20 20:47:20,965 INFO  17088 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-20 20:47:20,966 INFO  17088 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-20 20:47:21,192 INFO  17088 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8002"]
+2020-04-20 20:47:21,235 INFO  17088 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8002 (http) with context path ''
+2020-04-20 20:47:21,240 INFO  17088 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 5.068 seconds (JVM running for 6.486)
+2020-04-20 21:10:18,631 INFO  17088 --- [http-nio-8002-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-20 21:10:18,632 INFO  17088 --- [http-nio-8002-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-20 21:10:18,648 INFO  17088 --- [http-nio-8002-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 14 ms
+2020-04-20 21:10:19,699 INFO  17088 --- [http-nio-8002-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-20 21:10:20,623 INFO  17088 --- [http-nio-8002-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-20 21:10:20,637 DEBUG 17088 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM apply WHERE doctor_id = ? 
+2020-04-20 21:10:20,670 DEBUG 17088 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 21:10:20,738 DEBUG 17088 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 21:10:20,744 DEBUG 17088 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, doctor_id AS doctorId, doctor_name AS doctorName, workday_id AS workdayId, reason, request, status, apply_time AS applyTime from apply where doctor_id = ? LIMIT ? 
+2020-04-20 21:10:20,745 DEBUG 17088 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 21:10:20,792 DEBUG 17088 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 21:10:20,796 DEBUG 17088 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM record WHERE patient_id = ? 
+2020-04-20 21:10:20,796 DEBUG 17088 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-20 21:10:20,834 DEBUG 17088 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 21:10:20,835 DEBUG 17088 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, patient_id AS patientId, patient_name AS patientName, workday_id AS workdayId, doctor_id AS doctorId, work_time AS workTime, period, record_time AS recordTime, status from record where patient_id = ? LIMIT ? 
+2020-04-20 21:10:20,836 DEBUG 17088 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 10(Integer)
+2020-04-20 21:10:20,872 DEBUG 17088 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 21:10:41,087 DEBUG 17088 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM office 
+2020-04-20 21:10:41,088 DEBUG 17088 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 
+2020-04-20 21:10:41,089 INFO  17088 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-20 21:10:41,090 INFO  17088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-20 21:10:41,126 DEBUG 17088 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 21:10:41,129 DEBUG 17088 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,office_name,doctor_num FROM office LIMIT ? 
+2020-04-20 21:10:41,130 DEBUG 17088 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 10(Integer)
+2020-04-20 21:10:41,172 DEBUG 17088 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 10
+2020-04-20 21:10:41,495 INFO  17088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-20 21:10:51,453 INFO  15084 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 15084 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-20 21:10:51,457 INFO  15084 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-20 21:10:52,415 WARN  15084 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-20 21:10:52,885 INFO  15084 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8002 (http)
+2020-04-20 21:10:52,897 INFO  15084 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8002"]
+2020-04-20 21:10:52,898 INFO  15084 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-20 21:10:52,898 INFO  15084 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-20 21:10:53,033 INFO  15084 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-20 21:10:53,033 INFO  15084 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1457 ms
+2020-04-20 21:10:53,974 INFO  15084 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-20 21:10:54,110 INFO  15084 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-20 21:10:54,113 INFO  15084 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-20 21:10:54,114 INFO  15084 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-20 21:10:54,115 INFO  15084 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-20 21:10:54,266 INFO  15084 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8002"]
+2020-04-20 21:10:54,307 INFO  15084 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8002 (http) with context path ''
+2020-04-20 21:10:54,312 INFO  15084 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 3.634 seconds (JVM running for 4.982)
+2020-04-20 21:11:08,285 INFO  15084 --- [http-nio-8002-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-20 21:11:08,286 INFO  15084 --- [http-nio-8002-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-20 21:11:08,293 INFO  15084 --- [http-nio-8002-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 7 ms
+2020-04-20 21:11:51,420 INFO  15084 --- [http-nio-8002-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-20 21:11:52,466 INFO  15084 --- [http-nio-8002-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-20 21:11:52,545 DEBUG 15084 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from admin where username = ? and password = ? 
+2020-04-20 21:11:52,880 DEBUG 15084 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: admin(String), 21232f297a57a5a743894a0e4a801fc3(String)
+2020-04-20 21:11:53,163 DEBUG 15084 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1

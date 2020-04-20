@@ -4,6 +4,7 @@ import com.aokai.hospital.dao.DoctorMapper;
 import com.aokai.hospital.dao.OfficeMapper;
 import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.dto.OfficeInfo;
+import com.aokai.hospital.model.qo.InsertOfficeReq;
 import com.aokai.hospital.model.qo.OfficeDetailReq;
 import com.aokai.hospital.model.qo.SearchOfficeReq;
 import com.aokai.hospital.po.Doctor;
@@ -76,5 +77,22 @@ public class OfficeServiceImpl implements OfficeService {
         // 搜索科室
         List<Office> officeList = officeMapper.searchOffice(officeName);
         return officeList;
+    }
+
+    @Override
+    public Boolean checkOffcieName(String officeName) {
+        // 检查科室名称是否存在
+        Office office = officeMapper.checkOffcieName(officeName);
+        return office != null;
+    }
+
+    @Override
+    public Boolean insertOffice(InsertOfficeReq insertOfficeReq) {
+        Office office = new Office();
+        office.setDoctorNum(0);
+        office.setOfficeName(insertOfficeReq.getOfficeName());
+
+        Integer insert = officeMapper.insert(office);
+        return insert > 0;
     }
 }

@@ -13,4 +13,8 @@
     select id, office_name AS officeName, doctor_num AS doctorNum from office
     where office_name like #{officeName}
   </select>
+  <select id="checkOffcieName" resultType="com.aokai.hospital.po.Office">
+    select id, office_name AS officeName, doctor_num AS doctorNum from office
+    where office_name = #{officeName}
+  </select>
 </mapper>

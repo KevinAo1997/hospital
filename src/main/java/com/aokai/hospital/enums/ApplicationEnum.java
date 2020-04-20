@@ -38,7 +38,9 @@ public enum ApplicationEnum {
 
     FAIL("0","业务执行失败"),
 
-    RECORD_IS_EXIST("0","已经预约");
+    RECORD_IS_EXIST("0","已经预约"),
+
+    OFFICE_NAME_REPETITION("0","科室名已存在");
 
 
     /**

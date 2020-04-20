@@ -15,4 +15,11 @@ public interface OfficeMapper extends Mapper<Office> {
      * @return
      */
     List<Office> searchOffice(@Param("officeName") String officeName);
+
+    /**
+     * 检查科室名称是否存在
+     * @param officeName
+     * @return
+     */
+    Office checkOffcieName(@Param("officeName") String officeName);
 }

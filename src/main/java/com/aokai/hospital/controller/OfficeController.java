@@ -1,12 +1,15 @@
 package com.aokai.hospital.controller;
 
+import com.aokai.hospital.enums.ApplicationEnum;
 import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.dto.OfficeInfo;
+import com.aokai.hospital.model.qo.InsertOfficeReq;
 import com.aokai.hospital.model.qo.OfficeDetailReq;
 import com.aokai.hospital.model.qo.PageReq;
 import com.aokai.hospital.model.qo.SearchOfficeReq;
 import com.aokai.hospital.model.vo.OfficeDetailResp;
 import com.aokai.hospital.model.vo.OfficeResp;
+import com.aokai.hospital.model.vo.result.FailResult;
 import com.aokai.hospital.model.vo.result.Result;
 import com.aokai.hospital.model.vo.result.SuccessResult;
 import com.aokai.hospital.po.Office;
@@ -14,6 +17,7 @@ import com.aokai.hospital.service.OfficeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import java.util.List;
+import java.util.concurrent.ThreadPoolExecutor.AbortPolicy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -85,6 +89,26 @@ public class OfficeController {
         PageInfo<Office> officeInfoPageInfo = new PageInfo<>(officeList);
 
         return new SuccessResult<>(officeInfoPageInfo);
+    }
+
+    /**
+     * 新增科室
+     * @return
+     */
+    @RequestMapping(value = "/insertOffice", method = RequestMethod.POST)
+    @ResponseBody
+    public Result insertOffice(@RequestBody @Validated InsertOfficeReq insertOfficeReq) {
+        // 检查科室名称是否存在
+        Boolean checkOffcieName = officeService.checkOffcieName(insertOfficeReq.getOfficeName());
+        if (checkOffcieName) {
+            return new FailResult<>(ApplicationEnum.OFFICE_NAME_REPETITION);
+        }
+        // 新增科室
+        Boolean insertOffice = officeService.insertOffice(insertOfficeReq);
+        if (insertOffice) {
+            return new SuccessResult<>();
+        }
+        return new FailResult<>();
     }
 
 

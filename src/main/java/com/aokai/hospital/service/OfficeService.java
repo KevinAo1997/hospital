@@ -2,6 +2,7 @@ package com.aokai.hospital.service;
 
 import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.dto.OfficeInfo;
+import com.aokai.hospital.model.qo.InsertOfficeReq;
 import com.aokai.hospital.model.qo.OfficeDetailReq;
 import com.aokai.hospital.model.qo.SearchOfficeReq;
 import com.aokai.hospital.po.Office;
@@ -35,4 +36,18 @@ public interface OfficeService {
      * @return
      */
     List<Office> searchOffice(SearchOfficeReq searchOfficeReq);
+
+    /**
+     * 检查科室名称是否存在
+     * @param officeName
+     * @return
+     */
+    Boolean checkOffcieName(String officeName);
+
+    /**
+     * 新增科室
+     * @param insertOfficeReq
+     * @return
+     */
+    Boolean insertOffice(InsertOfficeReq insertOfficeReq);
 }
