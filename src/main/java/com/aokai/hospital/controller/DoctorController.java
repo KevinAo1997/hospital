@@ -1,10 +1,13 @@
 package com.aokai.hospital.controller;
 
+import com.aokai.hospital.enums.ApplicationEnum;
 import com.aokai.hospital.model.dto.DoctorInfo;
 import com.aokai.hospital.model.qo.GetDoctorReq;
+import com.aokai.hospital.model.qo.InsertDoctorReq;
 import com.aokai.hospital.model.qo.PageReq;
 import com.aokai.hospital.model.qo.SearchDoctorNameReq;
 import com.aokai.hospital.model.vo.RecommendDoctorResp;
+import com.aokai.hospital.model.vo.result.FailResult;
 import com.aokai.hospital.model.vo.result.Result;
 import com.aokai.hospital.model.vo.result.SuccessResult;
 import com.aokai.hospital.po.Doctor;
@@ -80,6 +83,27 @@ public class DoctorController {
         Doctor doctor = doctorService.getDoctor(getDoctorReq.getDoctorId());
 
         return new SuccessResult<>(doctor);
+    }
+
+    /**
+     * 新增医生
+     * @param insertDoctorReq
+     * @return
+     */
+    @RequestMapping(value = "/insertDoctor", method = RequestMethod.POST)
+    @ResponseBody
+    public Result insertDoctor(@RequestBody @Validated InsertDoctorReq insertDoctorReq) {
+        // 判断账号是否存在
+        Boolean checkName = doctorService.checkName(insertDoctorReq.getUsername());
+        if (checkName) {
+            return new FailResult<>(ApplicationEnum.USER_NAME_REPETITION);
+        }
+        // 新增医生
+        Boolean insertDoctor = doctorService.insertDoctor(insertDoctorReq);
+        if (insertDoctor) {
+            return new SuccessResult<>();
+        }
+        return new FailResult<>();
     }
 
 

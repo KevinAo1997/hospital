@@ -12,6 +12,6 @@
     <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
   <select id="getWorkDay" resultType="com.aokai.hospital.po.Workday">
-    select * from workday where = doctor_id = #{doctorId}
+    select id, doctor_id AS doctorId, work_time AS workTime , period, status from workday where  doctor_id = #{doctorId}
   </select>
 </mapper>

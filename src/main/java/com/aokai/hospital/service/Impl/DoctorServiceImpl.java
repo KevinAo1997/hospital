@@ -3,6 +3,7 @@ package com.aokai.hospital.service.Impl;
 import com.aokai.hospital.dao.DoctorMapper;
 import com.aokai.hospital.dao.OfficeMapper;
 import com.aokai.hospital.model.dto.DoctorInfo;
+import com.aokai.hospital.model.qo.InsertDoctorReq;
 import com.aokai.hospital.model.qo.SearchDoctorNameReq;
 import com.aokai.hospital.model.vo.RecommendDoctorResp;
 import com.aokai.hospital.po.Doctor;
@@ -14,6 +15,7 @@ import java.util.LinkedList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
+import org.omg.CORBA.INTERNAL;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,6 +67,24 @@ public class DoctorServiceImpl implements DoctorService {
         // 获取医生信息
         Doctor doctor = doctorMapper.selectByPrimaryKey(doctorId);
         return doctor;
+    }
+
+    @Override
+    public Boolean insertDoctor(InsertDoctorReq insertDoctorReq) {
+        Doctor doctor = new Doctor();
+        BeanUtils.copyProperties(insertDoctorReq, doctor);
+        doctor.setPassword(MD5Util.string2MD5(insertDoctorReq.getUsername()));
+
+        // 新增医生
+        Integer insert = doctorMapper.insert(doctor);
+        return insert > 0;
+    }
+
+    @Override
+    public Boolean checkName(String username) {
+        // 判断账号是否存在
+        Doctor doctor = doctorMapper.checkName(username);
+        return doctor != null;
     }
 
 

@@ -27,4 +27,11 @@ public class WorkDayServiceImpl implements WorkDayService {
         List<Workday> workdayList = workdayMapper.getWorkDay(doctorId);
         return workdayList;
     }
+
+    @Override
+    public List<Workday> getAllWorkDay() {
+        // 分页获取所有医生工作日信息
+        List<Workday> workdayList = workdayMapper.selectAll();
+        return workdayList;
+    }
 }

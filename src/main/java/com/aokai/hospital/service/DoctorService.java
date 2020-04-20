@@ -1,6 +1,7 @@
 package com.aokai.hospital.service;
 
 import com.aokai.hospital.model.dto.DoctorInfo;
+import com.aokai.hospital.model.qo.InsertDoctorReq;
 import com.aokai.hospital.model.qo.SearchDoctorNameReq;
 import com.aokai.hospital.model.vo.RecommendDoctorResp;
 import com.aokai.hospital.po.Doctor;
@@ -34,4 +35,18 @@ public interface DoctorService {
      * @return
      */
     Doctor getDoctor(Integer doctorId);
+
+    /**
+     * 新增医生
+     * @param insertDoctorReq
+     * @return
+     */
+    Boolean insertDoctor(InsertDoctorReq insertDoctorReq);
+
+    /**
+     * 判断账号是否存在
+     * @param username
+     * @return
+     */
+    Boolean checkName(String username);
 }

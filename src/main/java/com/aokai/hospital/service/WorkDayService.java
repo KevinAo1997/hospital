@@ -18,4 +18,9 @@ public interface WorkDayService {
      */
     List<Workday> getWorkDay(Integer doctorId);
 
+    /**
+     * 分页获取所有医生工作日信息
+     * @return
+     */
+    List<Workday> getAllWorkDay();
 }

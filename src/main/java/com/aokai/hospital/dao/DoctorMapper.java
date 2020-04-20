@@ -30,4 +30,11 @@ public interface DoctorMapper extends Mapper<Doctor> {
      * @return
      */
     List<Doctor> searchDoctor(@Param("docotrName") String docotrName);
+
+    /**
+     * 判断账号是否存在
+     * @param username
+     * @return
+     */
+    Doctor checkName(@Param("username") String username);
 }

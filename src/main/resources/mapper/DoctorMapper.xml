@@ -33,4 +33,8 @@
     select <include refid="Base_Column_List"/>
     from doctor where name like #{docotrName}
   </select>
+  <select id="checkName" resultType="com.aokai.hospital.po.Doctor">
+    select <include refid="Base_Column_List"/>
+    from doctor where username = #{username}
+  </select>
 </mapper>
