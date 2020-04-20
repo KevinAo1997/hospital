@@ -19,7 +19,7 @@
   </resultMap>
 
   <sql id="Base_Column_List">
-    username, password, name, fee, sex, age, office_name AS officeName, career, description, picpath
+    id, username, password, name, fee, sex, age, office_name AS officeName, career, description, picpath
   </sql>
   <select id="checkDoctor" resultType="com.aokai.hospital.po.Doctor">
     select <include refid="Base_Column_List"/>

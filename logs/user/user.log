@@ -130,3 +130,89 @@
 2020-04-20 00:25:04,921 DEBUG 16260 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,username,password,name,fee,sex,age,office_name,career,description,picpath FROM doctor WHERE id = ? 
 2020-04-20 00:25:04,922 DEBUG 16260 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
 2020-04-20 00:25:04,959 DEBUG 16260 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 12:02:43,053 INFO  8376 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 8376 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-20 12:02:43,053 INFO  8376 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-20 12:02:44,157 WARN  8376 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-20 12:02:44,733 INFO  8376 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8002 (http)
+2020-04-20 12:02:44,741 INFO  8376 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8002"]
+2020-04-20 12:02:44,741 INFO  8376 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-20 12:02:44,741 INFO  8376 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-20 12:02:44,877 INFO  8376 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-20 12:02:44,877 INFO  8376 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1704 ms
+2020-04-20 12:02:45,885 INFO  8376 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-20 12:02:46,037 INFO  8376 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-20 12:02:46,037 INFO  8376 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-20 12:02:46,037 INFO  8376 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-20 12:02:46,037 INFO  8376 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-20 12:02:46,173 INFO  8376 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8002"]
+2020-04-20 12:02:46,205 INFO  8376 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8002 (http) with context path ''
+2020-04-20 12:02:46,205 INFO  8376 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 4.178 seconds (JVM running for 6.16)
+2020-04-20 12:02:57,873 INFO  8376 --- [http-nio-8002-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-20 12:02:57,873 INFO  8376 --- [http-nio-8002-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-20 12:02:57,881 INFO  8376 --- [http-nio-8002-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 8 ms
+2020-04-20 12:02:58,137 INFO  8376 --- [http-nio-8002-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-20 12:02:58,675 INFO  8376 --- [http-nio-8002-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-20 12:02:58,683 DEBUG 8376 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from patient where username = ? and password = ? 
+2020-04-20 12:02:58,707 DEBUG 8376 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 001(String), 96e79218965eb72c92a549dd5a330112(String)
+2020-04-20 12:02:58,811 DEBUG 8376 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 12:03:01,328 DEBUG 8376 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM office 
+2020-04-20 12:03:01,329 DEBUG 8376 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 
+2020-04-20 12:03:01,367 DEBUG 8376 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 12:03:01,371 DEBUG 8376 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,office_name,doctor_num FROM office LIMIT ? 
+2020-04-20 12:03:01,372 DEBUG 8376 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 10(Integer)
+2020-04-20 12:03:01,407 DEBUG 8376 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 10
+2020-04-20 12:03:04,731 DEBUG 8376 --- [http-nio-8002-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM doctor WHERE office_name = ? 
+2020-04-20 12:03:04,732 DEBUG 8376 --- [http-nio-8002-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 儿科泌尿专科(String)
+2020-04-20 12:03:04,767 DEBUG 8376 --- [http-nio-8002-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 12:03:04,767 DEBUG 8376 --- [http-nio-8002-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select username, password, name, fee, sex, age, office_name AS officeName, career, description, picpath from doctor where office_name = ? LIMIT ? 
+2020-04-20 12:03:04,768 DEBUG 8376 --- [http-nio-8002-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 儿科泌尿专科(String), 10(Integer)
+2020-04-20 12:03:04,808 DEBUG 8376 --- [http-nio-8002-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 12:03:30,108 DEBUG 8376 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM office 
+2020-04-20 12:03:30,109 DEBUG 8376 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 
+2020-04-20 12:03:30,142 DEBUG 8376 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 12:03:30,143 DEBUG 8376 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,office_name,doctor_num FROM office LIMIT ? 
+2020-04-20 12:03:30,144 DEBUG 8376 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 10(Integer)
+2020-04-20 12:03:30,180 DEBUG 8376 --- [http-nio-8002-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 10
+2020-04-20 12:03:36,170 DEBUG 8376 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM doctor WHERE office_name = ? 
+2020-04-20 12:03:36,171 DEBUG 8376 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 儿科泌尿专科(String)
+2020-04-20 12:03:36,206 DEBUG 8376 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 12:03:36,209 DEBUG 8376 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select username, password, name, fee, sex, age, office_name AS officeName, career, description, picpath from doctor where office_name = ? LIMIT ? 
+2020-04-20 12:03:36,212 DEBUG 8376 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 儿科泌尿专科(String), 10(Integer)
+2020-04-20 12:03:36,254 DEBUG 8376 --- [http-nio-8002-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-20 12:04:04,190 INFO  8376 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-20 12:04:04,192 INFO  8376 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-20 12:04:04,213 INFO  8376 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-20 12:04:09,772 INFO  8492 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting HospitalApplication on DESKTOP-HQCJC2V with PID 8492 (D:\IDEAWork\hospital\target\classes started by lenovo in D:\IDEAWork\hospital)
+2020-04-20 12:04:09,780 INFO  8492 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-20 12:04:10,669 WARN  8492 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.hospital]' package. Please check your configuration.
+2020-04-20 12:04:11,181 INFO  8492 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8002 (http)
+2020-04-20 12:04:11,197 INFO  8492 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8002"]
+2020-04-20 12:04:11,197 INFO  8492 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-20 12:04:11,197 INFO  8492 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-20 12:04:11,333 INFO  8492 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-20 12:04:11,333 INFO  8492 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1433 ms
+2020-04-20 12:04:12,277 INFO  8492 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-20 12:04:12,405 INFO  8492 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-20 12:04:12,405 INFO  8492 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-20 12:04:12,405 INFO  8492 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-20 12:04:12,405 INFO  8492 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-20 12:04:12,517 INFO  8492 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8002"]
+2020-04-20 12:04:12,549 INFO  8492 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8002 (http) with context path ''
+2020-04-20 12:04:12,557 INFO  8492 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started HospitalApplication in 3.592 seconds (JVM running for 4.943)
+2020-04-20 12:04:43,660 INFO  8492 --- [http-nio-8002-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-20 12:04:43,660 INFO  8492 --- [http-nio-8002-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-20 12:04:43,668 INFO  8492 --- [http-nio-8002-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 7 ms
+2020-04-20 12:04:44,513 INFO  8492 --- [http-nio-8002-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-20 12:04:45,079 INFO  8492 --- [http-nio-8002-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-20 12:04:45,091 DEBUG 8492 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM office 
+2020-04-20 12:04:45,125 DEBUG 8492 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 
+2020-04-20 12:04:45,193 DEBUG 8492 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 12:04:45,199 DEBUG 8492 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,office_name,doctor_num FROM office LIMIT ? 
+2020-04-20 12:04:45,201 DEBUG 8492 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 10(Integer)
+2020-04-20 12:04:45,237 DEBUG 8492 --- [http-nio-8002-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 10
+2020-04-20 12:04:49,288 DEBUG 8492 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM doctor WHERE office_name = ? 
+2020-04-20 12:04:49,291 DEBUG 8492 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 儿科泌尿专科(String)
+2020-04-20 12:04:49,328 DEBUG 8492 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-20 12:04:49,331 DEBUG 8492 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, username, password, name, fee, sex, age, office_name AS officeName, career, description, picpath from doctor where office_name = ? LIMIT ? 
+2020-04-20 12:04:49,334 DEBUG 8492 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 儿科泌尿专科(String), 10(Integer)
+2020-04-20 12:04:49,387 DEBUG 8492 --- [http-nio-8002-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
